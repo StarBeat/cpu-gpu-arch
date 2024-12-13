@@ -4,6 +4,8 @@
 * 640, 660
 
 * Oculus Quest 2, Meta Quest Pro, Pico 4 (Adreno 650)
+* Snapdragon XR1 (with Adreno 615)
+* Snapdragon XR2, Snapdragon XR2+ Gen 1 (with Adreno 650)
 
 
 ## References
@@ -12,7 +14,7 @@
 2. [Qualcomm Details The Snapdragon 888](https://www.anandtech.com/show/16271/qualcomm-snapdragon-888-deep-dive)
 3. [Inside the Snapdragon 855’s iGPU](https://chipsandcheese.com/2024/05/01/inside-the-snapdragon-855s-igpu/)
 4. [Correction on Qualcomm iGPUs](https://chipsandcheese.com/2024/05/06/correction-on-qualcomm-igpus/)
-5. [Vulkan features for Adreno 660](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20660)
+5. [Vulkan features for Adreno 660](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20660), [Turnip Adreno 650](https://vulkan.gpuinfo.org/listreports.php?devicename=Turnip%20Adreno%20(TM)%20650)
 6. [Qualcomm Announces Snapdragon 865 and 765(G)](https://www.anandtech.com/show/15178/qualcomm-announces-snapdragon-865-and-765-5g-for-all-in-2020-all-the-details)
 7. [Adreno 660 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/Adreno_660.md)
 
@@ -70,13 +72,11 @@
 	- 12x uSPTP scheduler partitions.
 	- 768x FP32 units.
 
-	![](https://i0.wp.com/chipsandcheese.com/wp-content/uploads/2024/05/s855_a640_updated.png)<br/>
-	[[backup](../img/chipsandcheese_adreno640_arch.jpg)]
+	![](../img/chipsandcheese_adreno640_arch.jpg)
 
-	![](https://i0.wp.com/chipsandcheese.com/wp-content/uploads/2024/05/adreno_usptp.png)<br/>
-	[[backup](../img/chipsandcheese_adreno640_usptp.jpg)]
+	![](../img/chipsandcheese_adreno640_usptp.jpg)
 
-* Adreno 640 performace: [3]
+* Adreno 640 performance: [3]
 	- 408 GOPS FP32 Add (898.5 from specs)
 	- 407 GOPS FP32 FMA
 	-  55 GOPS FP32 Reciprocal

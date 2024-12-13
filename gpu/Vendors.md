@@ -3,7 +3,7 @@ Content:
 * [AMD](#amd)
 * [Apple](#apple)
 * [ARM Mali](#arm-mali)
-* [Huawei](#huawei)
+* [HiSilicon](#HiSilicon)
 * [Intel](#intel)
 * [NVidia](#nvidia)
 * [PowerVR](#imagination-technologies-powervr)
@@ -47,9 +47,8 @@ Content:
 * Apple5: A12
 * Apple6: A13
 * [Apple7: A14, M1](Apple-M1.md)
-* [Apple8: A15, M2](Apple-M2.md)
-* Apple8: A16
-* [Apple9: A17, M3](Apple-M3.md)
+* [Apple8: A15, A16, M2](Apple-M2.md)
+* [Apple9: A17, M3, M4](Apple-M3.md)
 
 ### Specs & Guide
 
@@ -141,18 +140,29 @@ Content:
 * [Best practices, Optimization guide](Adreno_Guide.md)
 
 
-## Huawei
+## HiSilicon
 
-TODO:
-Maleoon-910
+### Architecture
+
+* [Maleoon-910](HiSilicon-Maleoon.md)
+
+
+### Specs & Guide
+
+* [Best practices, Optimization guide](HiSilicon-Maleoon_Guide.md)
 
 
 ## Samsung
 
-TODO
+### Architecture
+
+* [Xclipse 530, 920, 940](Samsung-Xclipse.md)
+
+### Specs & Guide
+
+* see AMD RDNA2/3 [Best practices, Optimization guide](AMD_Guide.md)
+
 
 ## Broadcom
 
-* VideoCore 4 (Raspberry Pi 1, 2, 3)
-* VideoCore 6 (Raspberry Pi 4)
-* VideoCore 7 (Raspberry Pi 5)
+* [VideoCore 4, 6, 7](Broadcom-VideoCore.md)

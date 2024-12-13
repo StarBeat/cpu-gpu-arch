@@ -7,6 +7,7 @@ Content:
 * [Gen4](#Midgard-Gen4)
 * [All gens](#Midgard-(all-gens))
 
+
 # Midgard Gen1
 
 ## Examples
@@ -31,6 +32,8 @@ Content:
 
 * Forward Pixel Kill
 
+
+
 # Midgard Gen3
 
 ## Examples
@@ -46,6 +49,13 @@ Content:
 
 ## Notes
 
+* core config: [5]
+	- 1 fragment per cycle
+	- 1 pixel per cycle
+	- T720: 1 ALU, 32 fp16/cy, 20 fp32/cy
+	- T760: 2 ALU, 52 fp16/cy, 28 fp32/cy
+	- Max work registers (128b): 9-16 per 64 threads, 5-8 per 128 threads, 0-4 per 256 threads
+
 # Midgard Gen4
 
 ## Examples
@@ -60,7 +70,7 @@ Content:
 ## References
 
 4.1. [ARM Announces Mali 800 Series GPUs](https://www.anandtech.com/show/8649/arm-announces-mali-800-series-gpus-t860-t830-t820)<br/>
-4.2. [Arm Mali-T820 and Arm Mali-T830 Performance Counters Reference Guide](https://developer.arm.com/documentation/108059/latest/), [[backup](../pdf/arm_mali-t820_and_arm_mali-t830_performance_counters_reference_guide_108059_0102_en.pdf)]<br/>
+4.2. [Arm Mali-T820 and Arm Mali-T830 Performance Counters Reference Guide](https://developer.arm.com/documentation/108059/latest/), [[backup](../pdf/arm-mali-t820_and_arm_mali-t830_performance_counters_reference_guide_108059_0102_en.pdf)]<br/>
 4.3. [Arm Mali-T860 and Arm Mali-T880 Performance Counters Reference Guide](https://developer.arm.com/documentation/108061/0103)<br/>
 4.4. [Vulkan features for Mali-T880](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-T880)<br/>
 4.5. [Mali-T880 is set to Deliver the Premium Mobile Experience of 2016](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/mali-t880-is-set-to-deliver-the-premium-mobile-experience-of-2016)<br/>
@@ -75,6 +85,8 @@ Content:
 	- T830: 2 ALU, 56 fp16/cy, 32 fp32/cy
 	- T860: 2 ALU, 52 fp16/cy, 28 fp32/cy
 	- T880: 3 ALU, 78 fp16/cy, 42 fp32/cy
+	- Max work registers (128b): 9-16 per 64 threads, 5-8 per 128 threads, 0-4 per 256 threads
+	- T880: 5-8 registers per 192 threads, 9-16 registers per 96 threads.
 
 * T830: no AFBC [4.6]
 
@@ -85,16 +97,23 @@ Content:
 
 1. [Midgard Architecture](https://fileadmin.cs.lth.se/cs/Education/EDAN35/guestLectures/ARM-Mali.pdf), [[backup](../pdf/ARM-Mali-Midgard.pdf)]
 2. [ARM’s Mali Midgard Architecture Explored](https://www.anandtech.com/show/8234/arms-mali-midgard-architecture-explored)
-3. [The Midgard Shader Core](https://developer.arm.com/documentation/102560/latest/Midgard-GPU-Architecture), [[backup](../pdf/learn_the_basics_-_the_midgard_shader_core_102560_0100_02_en.pdf)]
+3. [The Midgard Shader Core](https://developer.arm.com/documentation/102560/latest/Midgard-GPU-Architecture), [[backup](../pdf/ARM-learn_the_basics_-_the_midgard_shader_core_102560_0100_02_en.pdf)]
 4. [Mesa driver details](https://docs.mesa3d.org/drivers/panfrost.html)
-5. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm_GPU_Datasheet_v3.pdf)]
+5. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm-GPU_Datasheet_v3.pdf)]
 
 ## Notes
 
 * Unified shader model
 * SIMD ISA (vector)
+* 128 bit work registers (fp32 x4)
 
 * Mali Midgard GPU shader cores allow variable numbers of threads to be created, depending on the number of work registers that are used by the in-flight shader programs.<br/>
 	0-4 registers - Maximum thread capacity
 	5-8 registers - Half thread capacity
 	8-16 registers - Quarter thread capacity
+
+* Tri-Pipe ALU: ADD, MUL, SFU. [2]
+* Mix of scalar and vector ALUs: 3 vector ALUs + 2 scalar ALUs, each responsible for a specific type of operation. [2]
+* Midgard (Gen3) does not extract thread level parallelism. [2]
+
+

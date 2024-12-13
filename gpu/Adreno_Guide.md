@@ -4,6 +4,11 @@
 1. [Qualcomm Snapdragon Mobile Platform OpenCL General Programming and Optimization](https://developer.qualcomm.com/qfile/33472/80-nb295-11_c.pdf)
 2. [Game Developer Guides](https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/developer-guide/gpu/gpu.html), [[webarchive](https://web.archive.org/web/20220104180856/https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/developer-guide/gpu/gpu.html)]
 
+**Wiki/Specs**<br/>
+1.1. [Wikipedia](https://en.wikipedia.org/wiki/Adreno)
+1.2. [Namu wiki](https://en.namu.wiki/w/%ED%80%84%EC%BB%B4%20Adreno%20GPU)
+
+
 ## Notes
 
 * Avoid discarding pixels in the fragment shader. [2]

@@ -3,7 +3,7 @@
 ## References
 
 * [Native SDK](https://github.com/powervr-graphics/Native_SDK) - to get access to the performance counters.
-* [PVRTune Counter List and Description (2018)](https://cdn.imgtec.com/sdk-documentation/PVRTune.Counter%20List%20and%20Description.pdf), [[backup](../pdf/PVRTune_Counter_List_and_Description.pdf)].
+* [PVRTune Counter List and Description (2018)](https://cdn.imgtec.com/sdk-documentation/PVRTune.Counter%20List%20and%20Description.pdf), [[backup](../pdf/PowerVR-PVRTune_Counter_List_and_Description.pdf)].
 * [PVRTune and PVRScope Documentation](https://docs.imgtec.com/tools-manuals/pvrtune-manual/html/configComplete/index.html)
 
 ## Notes
@@ -25,6 +25,12 @@
 **TA** - Tile Accelerator, determines which tiles contain each transformed primitive.<br/>
 **TLA** - ?<br/>
 **TSP** - Texture and Shading Processor. Applies colouring operations, like fragment shaders, to the visible pixels.<br/>
+
+
+### Timings
+
+NativeSDK has function `PVRScopeReadTimingData()` which returns time intervals. Each type of interval can overlap with another type because they executed in different queues (vertex, fragment, compute hw queues). Vulkan timestamps are not supported in PowerVR GPUs, on other devices writing timestamp implicitly adds barrier and prevents GPU to overlap execution.
+To measure multiple passes you can sum all intervals or calculate min/max time of all passes, depends on what information you need.
 
 
 ## BXM-8-256

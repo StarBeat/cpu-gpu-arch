@@ -7,10 +7,10 @@
 
 ## References
 
-1. [Architecture](https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Architecture_public.pdf)
-2. [Whitepaper](https://www.amd.com/system/files/documents/rdna-whitepaper.pdf)
-3. [Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/rdna-shader-instruction-set-architecture.pdf), [[backup](../pdf/AMD_rdna_isa.pdf)]
-4. [Optimization](https://gpuopen.com/wp-content/uploads/slides/GPUOpen_Let%E2%80%99sBuild2020_Optimizing%20for%20the%20Radeon%20RDNA%20Architecture.pdf)
+1. [Architecture](https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Architecture_public.pdf), [[backup](../pdf/AMD-RDNA_Architecture_public.pdf)]
+2. [Whitepaper](https://www.amd.com/system/files/documents/rdna-whitepaper.pdf), [[webarchive](https://web.archive.org/web/20240306074306/https://www.amd.com/system/files/documents/rdna-whitepaper.pdf)], [[backup](../pdf/AMD-rdna-whitepaper.pdf)]
+3. [Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/rdna-shader-instruction-set-architecture.pdf), [[backup](../pdf/AMD-rdna_isa.pdf)]
+4. [Optimization](https://gpuopen.com/wp-content/uploads/slides/GPUOpen_Let%E2%80%99sBuild2020_Optimizing%20for%20the%20Radeon%20RDNA%20Architecture.pdf), [[backup](../pdf/AMD-GPUOpen_LetsBuild2020_Optimizing_for_the_Radeon_RDNA_Architecture.pdf)]
 5. [(video) Optimizing for the Radeon RDNA Architecture](https://www.youtube.com/watch?v=7eEKLUhoTQs)
 6. [AMD Announces Radeon RX 5700 XT & RX 5700](https://www.anandtech.com/show/14528/amd-announces-radeon-rx-5700-xt-rx-5700-series)
 7. [Vulkan features for RX 5700 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%205700%20XT%20(RADV%20NAVI10))
@@ -158,7 +158,7 @@
 	- Store data processing: 32 dwords/2 clk
 	- Filtering 64bit texels: 4 components/clk
 
-* WGP contains: [1][2]
+* WGP: [1][2]
 	- 4x SIMD32 (VALU + SALU)
 	- 32KB Instruction Cache
 	- 16KB Scalar Cache
@@ -167,7 +167,7 @@
 	- 2x texture addresser
 	- 2x texture data
 
-* SIMD contains: [2]
+* SIMD32: [2]
 	- 10KB scalar register file, with 128 entries for each of the 20 wavefronts.
 	- Branch pipe. It handles conditional branches and interrupts.
 	- 32x ALU (fp32 FMA, i32 MAD, 2x fp16 FMA, 2x i16 MAD)
@@ -176,6 +176,8 @@
 	- Scalar cache can deliver 16B per clock to the scalar register file in each SIMD.
 	- 1024x VGPRs
 	- 256 FLOPs/cy
+	- up to 20 waves
+	- issues 1 instruction every cycle, 5 cycles of latency are exposed
 
 * vGPR contains: [2]
 	- 32 lanes 32-bits wide registers.

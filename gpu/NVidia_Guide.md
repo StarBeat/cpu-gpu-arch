@@ -3,8 +3,6 @@
 
 1. [Triangle rasterization](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline)
 2. [GPU architecture](https://simonschreibt.de/gat/renderhell-book2/)
-3. [CUDA Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html)
-4. [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
 
 **Shader Execution Reordering**<br/>
 1.1. [Shader Execution Reordering: Nvidia Tackles Divergence](https://chipsandcheese.com/2023/05/16/shader-execution-reordering-nvidia-tackles-divergence/)<br/>
@@ -46,15 +44,26 @@
 6.16. [Intrinsics (2023)](https://developer.nvidia.com/blog/advanced-api-performance-intrinsics/)<br/>
 6.17. [Swap Chains (2023)](https://developer.nvidia.com/blog/advanced-api-performance-swap-chains/)<br/>
 
+**CUDA**<br/>
+7.1. [CUDA Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html)<br/>
+7.2. [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)<br/>
+7.3. [Better Performance at Lower Occupancy (2010)](https://www.nvidia.com/content/gtc-2010/pdfs/2238_gtc2010.pdf)<br/>
+7.4. [CUDA Warps and Occupancy (2011)](https://developer.download.nvidia.com/CUDA/training/cuda_webinars_WarpsAndOccupancy.pdf)<br/>
+
+**Wiki/Specs**<br/>
+8.1. [List of Nvidia graphics processing units](https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units)
+8.2. [Namu wiki](https://en.namu.wiki/w/NVIDIA/GPU)
 
 ## Notes
 
-* Only use signed integers (if possible), this can be faster. The compiler can optimize more aggressively with signed arithmetic than it can with unsigned arithmetic. [3]
+* Only use signed integers (if possible), this can be faster. The compiler can optimize more aggressively with signed arithmetic than it can with unsigned arithmetic. [7.1]
 
 * Constant/vertex/index buffers are faster with direct binds (A4Engine)
 
 * In some cases compiler uses FP16 units to implement MOV (e.g. moving a number to a register by multiplying with zero and adding the value/constant it wants to move there). [nv forum]
-* A warp scheduler in a modern GPU can schedule 2 instructions per cycle(using different pipelines). [3?]
+* A warp scheduler in a modern GPU can schedule 2 instructions per cycle (using different pipelines). [3?]
 
 * Nvidia has been using separate FP32 and FP64 units in their Streaming Multiprocessors (Pascal, Turing, Ampere) [?]
+
+* Fast Context Switching: Context switching is very fast because registers and shared memory do not need to be saved and restored. [7.4]
 

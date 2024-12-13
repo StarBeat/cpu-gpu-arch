@@ -7,6 +7,10 @@
 * [HardwarePerfCounter](https://github.com/google/hardware-perfcounter/) - to get access to the performance counters.
 * [Mesa driver details](https://docs.mesa3d.org/drivers/freedreno.html)
 * [Freedreno wiki](https://github.com/freedreno/freedreno/wiki)
+* [A6xx SP](https://gitlab.freedesktop.org/freedreno/freedreno/-/wikis/A6xx-SP)
+* [Android/Linux GPU Drivers: Internals and Resources](https://www.lei.chat/posts/android-linux-gpu-drivers-internals-and-resources/)
+* [Kernel code for Samsung Galaxy S21 (Snapdragon 888)](https://github.com/antiagainst/SM-G991U/tree/main/drivers/gpu/msm), [msm in linux](https://github.com/torvalds/linux/tree/master/drivers/gpu/drm/msm)
+
 
 ## Notes
 
@@ -55,16 +59,21 @@
 **com** - ?<br/>
 **dcom** - ?<br/>
 **color/depth blocks** - block of 4x4 pixels which will be compressed before transfer from GMem to global memory.<br/>
+**IOMMU** - Memory management unit.<br/>
 
+### Timings
 
-Warning: some devices requires root to access performance counters.
+Vulkan adds implicit barriers when used timestamps, it prevent commands to overlap and can not be used to measure small tasks. Only large passes or group of passes can execute without influence of time measurements.
 
-Some devices requires to enable performance counters from adb, which requires root on some devices: [ref](https://github.com/google/agi/issues/1113#issuecomment-1165786744)
+### Access to performance counters
+
+Warning: some devices requires root to access performance counters.<br/>
+Other devices requires to enable performance counters from adb, which may requires root: [ref](https://github.com/google/agi/issues/1113#issuecomment-1165786744)
 ```
 adb shell "echo 1 > /sys/class/kgsl/kgsl-3d0/perfcounter"
 ```
 
-| device | adreno gpu | perf counters without root | reference |
+| Device | Adreno GPU | without root | reference |
 |---|---|---|---|
 | Redmi 7A                      | 505 | yes | [[az](https://github.com/azhirnov)] |
 | Motorola Defy                 | 610 | yes | [[az](https://github.com/azhirnov)] |
@@ -72,7 +81,7 @@ adb shell "echo 1 > /sys/class/kgsl/kgsl-3d0/perfcounter"
 | Asus ROG Phone 5              | 660 | **no** | [[az](https://github.com/azhirnov)] |
 | Asus ROG Phone 6              | 730 | **no** | [ref](https://github.com/google/agi/issues/1113#issuecomment-1228880530) |
 | Asus Zenfone 9                | 730 | **no** | [ref](https://github.com/google/agi/issues/1113#issuecomment-1228880530) |
-| OnePlus 7 Pro                 | 640 | yes | [ref](https://chipsandcheese.com/2024/05/01/inside-the-snapdragon-855s-igpu/) |
+| OnePlus 7 Pro                 | 640 | yes (?) | [ref](https://chipsandcheese.com/2024/05/01/inside-the-snapdragon-855s-igpu/) |
 | Xiaome Poco X3 Pro            | 640 | **no** | [ref](https://github.com/google/agi/issues/1348) |
 | Google Pixel 4 (Pro)          | 640 | yes | [ref](https://developer.android.com/agi/supported-devices) |
 | Google Pixel 4a               | 618 | yes | [ref](https://developer.android.com/agi/supported-devices) |

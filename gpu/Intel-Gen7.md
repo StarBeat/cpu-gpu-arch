@@ -18,7 +18,7 @@ code names: Ivy Bridge, Haswell.
 ## References
 
 1. [Ivy Bridge’s Gen7 Graphics: Intel’s Modern iGPU Push](https://chipsandcheese.com/2023/08/25/ivy-bridges-gen7-graphics-intels-modern-igpu-push/)
-2. [The Compute Architecture of Intel Processor Graphics Gen7.5](https://www.intel.com/content/dam/develop/external/us/en/documents/compute-architecture-of-intel-processor-graphics-gen7dot5-aug4-2014-166010.pdf), [[backup](../pdf/compute-architecture-of-intel-processor-graphics-gen7dot5-aug4-2014-166010.pdf)]
+2. [The Compute Architecture of Intel Processor Graphics Gen7.5](https://www.intel.com/content/dam/develop/external/us/en/documents/compute-architecture-of-intel-processor-graphics-gen7dot5-aug4-2014-166010.pdf), [[backup](../pdf/Intel-compute-architecture-of-intel-processor-graphics-gen7dot5-aug4-2014-166010.pdf)]
 
 ## Notes
 

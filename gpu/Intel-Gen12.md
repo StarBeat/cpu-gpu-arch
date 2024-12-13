@@ -5,14 +5,14 @@ code name: Tiger Lake, Rocket Lake, Alder Lake, Raptor Lake.
 
 ## Examples
 
-* Intel UHD Graphics 730
+* Intel UHD Graphics 730, 770
 * Iris Xe Graphics G7
 
 ## References
 
-1.1. [Intel Processor Graphics Architecture](https://cdrdv2-public.intel.com/686065/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf), [[backup](../pdf/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf)]<br/>
+1.1. [Intel Processor Graphics Architecture](https://cdrdv2-public.intel.com/686065/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf), [[backup](../pdf/Intel-the-architecture-of-intel-processor-graphics-gen11-r1new.pdf)]<br/>
 1.2. [Intel Processor Graphics Xᵉ-LP API Developer and Optimization Guide](https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html), [[webarchive](https://web.archive.org/web/20230623012301/https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html)]<br/>
-1.3. [Vulkan features for Iris Xe](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Iris(R)%20Xe%20Graphics)<br/>
+1.3. [Vulkan features for Iris Xe](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Iris(R)%20Xe%20Graphics), [UHD Graphics 770](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20UHD%20Graphics%20770)<br/>
 
 ## Notes
 
@@ -47,7 +47,7 @@ CPU code name: Meteor Lake, Lunar Lake.
 
 2.1. [Raytracing on Meteor Lake’s iGPU](https://chipsandcheese.com/2024/04/15/raytracing-on-meteor-lakes-igpu/)<br/>
 2.2. [Intel’s Ambitious Meteor Lake iGPU](https://chipsandcheese.com/2024/04/08/intels-ambitious-meteor-lake-igpu/)<br/>
-
+2.3. [Vulkan features for Arc A380](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20A380%20Graphics)<br/>
 
 ## Notes
 

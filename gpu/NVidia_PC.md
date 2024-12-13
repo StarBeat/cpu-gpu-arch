@@ -68,3 +68,7 @@
 **tag** - Unique key to a cache line. A request may look up multiple tags, if the thread addresses do not all fall within a single cache line-aligned region. The L1 and L2 both have 128 byte cache lines. Tag accesses may be classified as hits or misses.<br/>
 **wavefront** - Unique “work package” generated at the end of the processing stage for requests. All work items of a wavefront are processed in parallel, while work items of different wavefronts are serialized and processed on different cycles. At least one wavefront is generated for each request.<br/>
 
+
+### Timings
+
+Vulkan adds implicit barriers when used timestamps, it prevent commands to overlap and can not be used to measure small tasks. Only large passes or group of passes can execute without influence of time measurements.

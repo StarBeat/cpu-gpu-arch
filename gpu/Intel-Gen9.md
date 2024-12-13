@@ -24,8 +24,8 @@ code names: Skylake, Apollo Lake, Kaby Lake, Kaby Lake Refresh, Amber Lake, Coff
 ## References
 
 1. [Instruction Set Architecture](https://software.intel.com/sites/default/files/managed/89/92/Intel-Graphics-Architecture-ISA-and-microarchitecture.pdf), [[webarchive](https://web.archive.org/web/20201108102656/https://software.intel.com/sites/default/files/managed/89/92/Intel-Graphics-Architecture-ISA-and-microarchitecture.pdf)], [[backup](../pdf/Intel-Graphics-gen9-Architecture-ISA-and-microarchitecture.pdf)]
-2. [Compute Architecture of Intel Processor Graphics Gen9](https://cdrdv2-public.intel.com/774710/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf), [[backup](../pdf/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)]
-3. [Graphics API Performance Guide for Intel Processor Graphics Gen9](https://cdrdv2-public.intel.com/671201/graphics-api-performance-guide-2-5.pdf), [[backup](../pdf/graphics-api-performance-guide-2-5.pdf)]
+2. [Compute Architecture of Intel Processor Graphics Gen9](https://cdrdv2-public.intel.com/774710/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf), [[backup](../pdf/Intel-the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)]
+3. [Graphics API Performance Guide for Intel Processor Graphics Gen9](https://cdrdv2-public.intel.com/671201/graphics-api-performance-guide-2-5.pdf), [[backup](../pdf/Intel-graphics-api-performance-guide-2-5.pdf)]
 4. [Vulkan features for HD 630](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20HD%20Graphics%20630), [UHD 630](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20UHD%20Graphics%20630)
 5. [Intel UHD 620 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/Intel_UHD620.md)
 

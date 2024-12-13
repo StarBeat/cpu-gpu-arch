@@ -4,6 +4,9 @@
 * 741, X (X Elite)
 
 * Meta Quest 3 (Adreno 740)
+* Snapdragon XR2 Gen 2 (with Adreno 740)
+
+
 
 ## References
 
@@ -12,7 +15,7 @@
 3. [Inside Snapdragon 8+ Gen 1’s iGPU: Adreno Gets Big](https://chipsandcheese.com/2024/03/05/inside-snapdragon-8-gen-1s-igpu-adreno-gets-big/)
 4. [Freedreno wiki: A7xx ray tracing](https://gitlab.freedesktop.org/freedreno/freedreno/-/wikis/a7xx-ray-tracing)
 5. [Freedreno wiki: AQE](https://gitlab.freedesktop.org/freedreno/freedreno/-/wikis/AQE)
-6. [Vulkan features for Adreno 740](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20740)
+6. [Vulkan features for Adreno 740](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20740), [X1-85](https://vulkan.gpuinfo.org/listreports.php?devicename=Qualcomm(R)%20Adreno(TM)%20X1-85%20GPU)
 7. [The Snapdragon X Elite’s Adreno iGPU](https://chipsandcheese.com/2024/07/04/the-snapdragon-x-elites-adreno-igpu/)
 8. [Correction on Qualcomm iGPUs](https://chipsandcheese.com/2024/05/06/correction-on-qualcomm-igpus/)
 

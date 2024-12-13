@@ -1,8 +1,9 @@
 
 ## Examples
 
-* M3
+* M3, M3 Pro, M3 Max
 * A17 Pro
+* M4
 
 ## References
 

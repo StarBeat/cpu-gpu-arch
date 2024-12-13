@@ -15,11 +15,11 @@ With RTX:
 
 1. [Tuning CUDA Applications for Turing](https://docs.nvidia.com/cuda/turing-tuning-guide/)
 2. [Turing Architecture In-Depth](https://developer.nvidia.com/blog/nvidia-turing-architecture-in-depth/)
-3. [Architecture Whitepaper](https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf), [[backup](../pdf/NVIDIA-Turing-Architecture-Whitepaper.pdf)]
-4. [Dissecting the NVidia Turing T4 GPU via Microbenchmarking](https://arxiv.org/pdf/1903.07486), [[backup](../pdf/Turing-Microbenchmarking.pdf)]
+3. [Architecture Whitepaper](https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf), [[backup](../pdf/NV-Turing-Architecture-Whitepaper.pdf)]
+4. [Dissecting the NVidia Turing T4 GPU via Microbenchmarking](https://arxiv.org/pdf/1903.07486), [[backup](../pdf/NV-Turing-Microbenchmarking.pdf)]
 5. [Re-converging control flow on NVIDIA GPUs](https://www.collabora.com/news-and-blog/blog/2024/04/25/re-converging-control-flow-on-nvidia-gpus/)
 6. [Implementing DRM format modifiers in NVK](https://www.collabora.com/news-and-blog/news-and-events/implementing-drm-format-modifiers-in-nvk.html)
-7. [Dissecting the Turing GPU Architecture through Microbenchmarking](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9839-discovering-the-turing-t4-gpu-architecture-with-microbenchmarks.pdf)
+7. [Dissecting the Turing GPU Architecture through Microbenchmarking](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9839-discovering-the-turing-t4-gpu-architecture-with-microbenchmarks.pdf), [[backup](../pdf/NV-discovering-the-turing-t4-gpu-architecture-with-microbenchmarks.pdf)]
 8. [Compute Capability 7.5](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-7-x)
 9. [Vulkan features for RTX 2080](https://vulkan.gpuinfo.org/listreports.php?devicename=NVIDIA%20GeForce%20RTX%202080)
 10. [RTX 2080 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/NVidia_RTX2080.md)
@@ -27,6 +27,7 @@ With RTX:
 ## Notes
 
 ### SM
+
 * Independent Thread Scheduling.
 	- On recent NVIDIA hardware, the two sides of an `if` may even be executed simultaneously since the two sides act on disjoint sets of invocations. [5]
 	- TODO [7]
@@ -41,7 +42,7 @@ With RTX:
 	- Applications can interleave pointer arithmetic with floating-point computations. [1]
 	- Index math and pointer math instructions can run in parallel with FP instructions. [7]
 	- Profiling many workloads shows an average of 36 integer operations for every 100 floating point operations. [2]
-	- fp32:i32 rate:  1:1 - not supported, 2:1 - supported, only IADD. [10]
+	- fp32:i32 rate is 1:1, only IADD. [10]
 
 * Warp mapping: [4]
 	- Warps are mapped to schedulers (and processing blocks) according to the same, simple rule: `scheduler_id = warp_id%4`.
@@ -80,14 +81,14 @@ With RTX:
 	- The maximum number of concurrent warps per SM is 32.
 	- The register file size is 64k 32-bit registers per SM.
 	- The maximum registers per thread is 255.
-	- The maximum number of thread blocks per SM is 16.
+	- The maximum number of thread blocks (workgroups?) per SM is 16.
 	- Shared memory capacity per SM is 64KB.
 * SM: [1]
 	- 64 FP32 cores
 	- 64 INT32 (dedicated) cores
 	- 2 FP64 cores
 	- 8 improved mixed-precision Tensor Cores
-	- 4 warps
+	- 4 warp-scheduler units
 * [7]
 	- 4 Load/Store Units (LSU) per scheduler
 	- 1024 threads per SM
@@ -125,7 +126,7 @@ With RTX:
 	- ~15: POPC, FLO, BREV, MUFU
 	- ~48: DADD, DMUL
 	- ~54: DFMA, DSET, DSETP
-	- integer and single precision instructions have 4-cycle latency [7]
+	- integer and single precision instructions have 4-cycle latency [1,7]
 
 * Atomics: [4]
 	- 1.5 GiB/s global memory throughput when 1024 threads accessing the same address
@@ -144,8 +145,8 @@ With RTX:
 	- 6 Graphics Processing Clusters (GPCs)
 	- 36 Texture Processing Clusters (TPCs)
 	- 72 Streaming Multiprocessors (SMs)
-	- Each GPC includes a dedicated raster engine and six TPCs
-	- Each TPC including two SMs
+	- Each GPC includes a dedicated raster engine and 6 TPCs
+	- Each TPC including 2 SMs
 	- Each SM contains:
 		* 64 CUDA Cores
 		* 8 Tensor Cores

@@ -46,8 +46,8 @@
 **RW** - Coherently Cached with Write.<br/>
 **SALU** - Scalar ALU. Can only be used for a limited set of operations, like integer and logical.<br/>
 **SC** - shader core? <br/>
-**SGPR** - Vector General Purpose Registers.<br/>
-**Shader Engine** - <br/>
+**SGPR** - Scalar General Purpose Registers. Represent a set of registers used to store data that is known to be uniform across the wavefront at compile-time. SGPRs are manipulated by the Scalar ALU (SALU). <br/>
+**Shader Engine** - ?<br/>
 **SX** - ?<br/>
 **SQ_CS** - ?<br/>
 **SQ_HS** - ?<br/>
@@ -56,7 +56,6 @@
 **SQ_VS** - ?<br/>
 **SQ_GS** - ?<br/>
 **SQ_ES** - ?<br/>
-**SQ** - ?<br/>
 **SPI** - Shader Processor Input.<br/>
 **SH** - ?<br/>
 **SMEM** - Scalar memory operations. SMEM transfers data between scalar registers and memory through scalar data cache. The SMEM instruction reads/writes consecutive DWORDs between SGPRs and memory.<br/>
@@ -74,11 +73,11 @@
 **UC** - Uncached.<br/>
 **UTCL1**, **UTCL2** - Unified Translation Cache - Level X<br/>
 **VGT** - ?<br/>
-**VALU** - Vector ALU. <br/>
-**VGPR** - Scalar General Purpose Registers. Represent a set of registers used to store data that is known to be uniform across the wavefront at compile-time. SGPRs are manipulated by the Scalar ALU (SALU). <br/>
+**VALU** - Vector ALU. One instruction per wavefront, operates on vector registers (VGPR).<br/>
+**VGPR** - Vector General Purpose Registers. This is SIMT vector, stores unique values per thread.<br/>
 **VMEM** - Vector memory operations. VMEM transfers data between vector registers and memory with each thread can provide a unique memory address.<br/>
 **v​L1D** - Vector Level -1 Data Cache.<br/>
-**wavefront** - warp, subgroup. 32 or 64 threads per warp.<br/>
+**wavefront** - same as warp, subgroup. 32 or 64 threads per wavefront.<br/>
 **WGP** - workgroup processor.<br/>
 
 

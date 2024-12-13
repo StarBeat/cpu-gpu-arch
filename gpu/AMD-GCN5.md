@@ -6,13 +6,23 @@
 * Radeon RX Vega 56, 64
 * Radeon VII
 
+**APU:**
+* Ryzen 2xxx - 5xxx
+* Ryzen 7x30
+
+**Integrated in desktop CPU:**
+* Ryzen 2x00G
+* Ryzen 3x00G
+* Ryzen 4x00G
+* Ryzen 5600G, 5700G
+
 ## References
 
-1. [Vega Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/vega-shader-instruction-set-architecture.pdf), [[backup](../pdf/vega-shader-instruction-set-architecture.pdf)]
-2. [RDNA Architecture](https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Architecture_public.pdf) - difference between GCN and RDNA
+1. [Vega Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/vega-shader-instruction-set-architecture.pdf), [[backup](../pdf/AMD-vega-shader-instruction-set-architecture.pdf)]
+2. Difference between GCN and RDNA: [RDNA Architecture](https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Architecture_public.pdf), [[webarchive](https://web.archive.org/web/20240306074306/https://www.amd.com/system/files/documents/rdna-whitepaper.pdf)], [[backup](../pdf/AMD-rdna-whitepaper.pdf)]
 3. [The AMD Radeon VII Review](https://www.anandtech.com/show/13923/the-amd-radeon-vii-review)
-4. [Vega Whitepaper](https://en.wikichip.org/w/images/a/a1/vega-whitepaper.pdf)
-5. [Vega 7nm ISA](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/vega-7nm-shader-instruction-set-architecture.pdf)
+4. [Vega Whitepaper](https://en.wikichip.org/w/images/a/a1/vega-whitepaper.pdf), [[backup](../pdf/AMD-vega-whitepaper.pdf)]
+5. [Vega 7nm ISA](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/vega-7nm-shader-instruction-set-architecture.pdf), [[backup](../pdf/AMD-vega-shader-instruction-set-architecture.pdf)]
 6. [Vulkan features for Radeon VII](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20VII)
 
 ## Notes

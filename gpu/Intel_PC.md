@@ -26,6 +26,11 @@
 **Stencil Cache** - <br/>
 **Thread Dispatcher** - <br/>
 
+### Timings
+
+Vulkan adds implicit barriers when used timestamps, it prevent commands to overlap and can not be used to measure small tasks. Only large passes or group of passes can execute without influence of time measurements.
+
+
 ## UHD 620 (VK_KHR_performance_query)
 
 <details>

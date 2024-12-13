@@ -1,14 +1,16 @@
 
 ## References
 
-1. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm_gpu_best_practices_developer_guide_101897_0302_04_en.pdf)]
-2. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/latest/), [backup: [v3](../pdf/Arm_GPU_Datasheet_v3.pdf), [v7](../pdf/Arm_GPU_datasheet_v7.pdf)]
+1. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-gpu_best_practices_developer_guide_3_3.pdf)]
+2. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/latest/), [backup: [v3](../pdf/Arm-GPU_Datasheet_v3.pdf), [v7](../pdf/Arm-GPU_datasheet_v7.pdf)]
 3. [AFBC](https://developer.arm.com/Architectures/Arm%20Frame%20Buffer%20Compression)
 4. [(video playlist) Arm Mali GPU Training Series](https://www.youtube.com/playlist?list=PLKjl7IFAwc4QUTejaX2vpIwXstbgf8Ik7)
 5. [Authoring Efficient Shaders for Optimal Mobile Performance](https://www.dropbox.com/s/ic0c6k0yzf2uk81/Authoring%20Efficient%20Shaders%20for%20Optimal%20Mobile%20Performance%20-%20GDC2022%20-Arm%20%26%20NaturalMotion.pdf?dl=0)
 6. [Memory limits with Vulkan on Mali GPUs](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/memory-limits-with-vulkan-on-mali-gpus)
 7. [Forward Pixel Kill](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/killing-pixels---a-new-optimization-for-shading-on-arm-mali-gpus)
-
+8. [GDC2015: How to Optimize Your Mobile Game with ARM Tools and Practical Examples](https://www.gdcvault.com/play/1022397/How-to-Optimize-Your-Mobile) (Midgard architecture)
+9. [Hidden Surface Removal in Immortalis-G925: The Fragment Prepass](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/immortalis-g925-the-fragment-prepass), [[webarchive](https://web.archive.org/web/20241202033355/https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/immortalis-g925-the-fragment-prepass)]<br/>
+ 
 **Guide**<br/>
 1.1. [Accelerating 2D Applications](https://developer.arm.com/documentation/102524/0100/Overview)<br/>
 1.2. [Tile-Based Rendering](https://developer.arm.com/documentation/102662/0100/Overview)<br/>
@@ -21,6 +23,11 @@
 2.2. [Lighting Guide](https://developer.arm.com/documentation/102109/0100/Overview)<br/>
 2.3. [Materials and Shaders Guide](https://developer.arm.com/documentation/102471/0200/Overview)<br/>
 2.4. [Texturing Guide](https://developer.arm.com/documentation/102449/0200/Overview)<br/>
+
+**Wiki/Specs**<br/>
+3.1. [Wikipedia](https://en.wikipedia.org/wiki/Mali_(processor))
+3.2. [Namu wiki](https://en.namu.wiki/w/ARM%20Mali%20GPU)
+
 
 ## Notes
 
@@ -39,10 +46,6 @@
 	- VkImageCompressionPropertiesEXT::imageCompressionFlags will contain VK_IMAGE_COMPRESSION_FIXED_RATE_EXPLICIT_EXT if AFRC is used. [1]
 	- The main, and safest, use of AFRC is for display images. [1]
 
-* Transaction Elimination spots the identical pixel blocks between two consecutive render targets and performs a partial update to the frame buffer with the changed pixel blocks only, which reduces memory bandwidth and thus energy. [arm]
-	- TE works for whole tile (16x16 px).
-
-* Smart Composition extends the concept of Transaction Elimination to every stage of UI composition. Identical pixel blocks of input surfaces are not read, not processed for composition and not written to final frame buffer. [arm]
 * Foveated Rendering allows VR application to specify the shading rate to be used in each part of the screen. This helps the developer to reduce the workload of VR applications by selectively define the part of the screen that require less work from the GPU due to distortion introduced by the VR headset lenses. (fragment density in Vulkan). [arm]
 
 * How to optimize blending: [1]
@@ -54,7 +57,12 @@
 	- Do not generalize the user interface rendering code so that blending is always enabled.
 	- Do not just set alpha to 1.0 in the fragment shader to disable blending.
 
-* Transaction elimination is used for an image if: [1]
+* **Transaction Elimination** spots the identical pixel blocks between two consecutive render targets and performs a partial update to the frame buffer with the changed pixel blocks only, which reduces memory bandwidth and thus energy. [arm]
+	- TE works for whole tile (16x16 px).
+
+* Smart Composition extends the concept of **Transaction Elimination** to every stage of UI composition. Identical pixel blocks of input surfaces are not read, not processed for composition and not written to final frame buffer. [arm]
+
+* **Transaction Elimination** is used for an image if: [1]
 	- The sample count is 1.
 	- The mipmap level is 1.
 	- The image uses COLOR_ATTACHMENT_BIT.
@@ -142,3 +150,19 @@
 	- Starting from Mali Bifrost: MP4 equal to MC2 with 2 pixel per clock, MP3 is MC2 with different cores: 2 pixel per clock + 1 pixel per clock.
 	- Based on `VK_ARM_shader_core_builtins` they are same. [[az](https://github.com/azhirnov)]
 
+	
+* Fragment Pre-pass. What makes a draw call compatible: [9]
+	- A non-opaque draw call that writes Z or S.
+		* If draw that does not fully overwrite all render targets that have previously been written to in the tile, then it is effectively transparent.
+		* Draw calls that read the tile buffer are also considered transparent.
+	- A ZS-only draw that follows a compatible non-opaque draw call is considered incompatible.
+	- Fragment shader side effects: **read-write** access to something, atomics if used result value.
+	- Anything where the rasterizer coverage is required in the fragment shader:
+		* Centroid varyings
+		* Reading the coverage mask
+		* Checking if the lane is a helper lane
+	- Reading from the tile buffer at sample positions for which the primitive doesn't have coverage.
+	- Draw calls that write Z or Stencil where the fragment shader modifies coverage, but the shader explicitly states that ZS testing and update must happen early.
+
+* Fragment Pre-pass benefits: [9]
+	- No need to sort by depth any more.

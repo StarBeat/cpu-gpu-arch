@@ -13,7 +13,7 @@ code name: Broadwell, Braswell.
 
 ## References
 
-1. [The Compute Architecture of Intel Processor Graphics Gen8](https://www.intel.com/content/dam/develop/external/us/en/documents/compute-architecture-of-intel-processor-graphics-gen8-166010.pdf), [[backup](../pdf/compute-architecture-of-intel-processor-graphics-gen8-166010.pdf)]
+1. [The Compute Architecture of Intel Processor Graphics Gen8](https://www.intel.com/content/dam/develop/external/us/en/documents/compute-architecture-of-intel-processor-graphics-gen8-166010.pdf), [[backup](../pdf/Intel-compute-architecture-of-intel-processor-graphics-gen8-166010.pdf)]
 
 
 ## Notes

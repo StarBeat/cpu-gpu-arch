@@ -9,7 +9,7 @@
 
 ## References
 
-1. [Dissecting the Polaris Architecture](https://www.amd.com/system/files/documents/polaris-whitepaper.pdf), [[backup](../pdf/polaris-whitepaper.pdf)]
+1. [Dissecting the Polaris Architecture](https://www.amd.com/system/files/documents/polaris-whitepaper.pdf), [[backup](../pdf/AMD-polaris-whitepaper.pdf)]
 2. [Vulkan features for RX 580](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%20580%20Series%20(RADV%20POLARIS10))
 3. [RX 570 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/AMD_RX570.md)
 

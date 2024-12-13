@@ -77,8 +77,7 @@ Content:
 4.2. [Arm Cortex-A520 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC-1505342170-671342/latest)<br/>
 4.3. [Arm Cortex-X4 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC1505342170538636/latest/)<br/>
 4.4. [Arm Cortex-X4 Core Technical Reference Manual](https://developer.arm.com/documentation/102484/0002/The-Cortex-X4--core)<br/>
-4.5. [SVE Optimization Guide](https://developer.arm.com/documentation/102699/latest/)<br/>
-4.6. [Arm Unveils 2024 CPU Core Designs, Cortex X925, A725 and A520](https://www.anandtech.com/show/21399/arm-unveils-2024-cpu-core-designs-cortex-x925-a725-and-a520-arm-v9-2-redefined-for-3nm-)
+4.5. [Arm Unveils 2024 CPU Core Designs, Cortex X925, A725 and A520](https://www.anandtech.com/show/21399/arm-unveils-2024-cpu-core-designs-cortex-x925-a725-and-a520-arm-v9-2-redefined-for-3nm-)
 
 # All
 

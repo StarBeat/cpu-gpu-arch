@@ -3,8 +3,9 @@ Content:
 * [Apple](#Apple)
 * [ARM](#ARM)
 * [Intel](#Intel)
-* [Snapdragon](#Qualcomm-Snapdragon)
+* [Qualcomm](#Qualcomm)
 * [Loongson](#Loongson)
+* [HiSilicon](#HiSilicon)
 
 
 ## AMD
@@ -27,7 +28,7 @@ Content:
 * [CPU Architectures](Intel-Arch.md)
 * [Best practices, Optimization guide](Intel-Guide.md)
 
-## Qualcomm Snapdragon
+## Qualcomm
 
 * [CPU Architectures](Qualcomm-Arch.md)
 * [Best practices, Optimization guide](Qualcomm-Guide.md)

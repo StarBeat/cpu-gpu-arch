@@ -1,7 +1,7 @@
 
 ## Examples
 
-* A15
+* A15, A16
 * M2
 * Apple Vision Pro
 

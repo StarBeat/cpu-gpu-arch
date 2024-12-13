@@ -1,20 +1,26 @@
 
 ## References
 
-### Performance
+**Performance**<br/>
 1.1. [Understanding GPU context rolls (2018)](https://gpuopen.com/learn/understanding-gpu-context-rolls/)<br/>
 1.2. [Optimizing GPU occupancy and resource usage with large thread groups (2017)](https://gpuopen.com/learn/optimizing-gpu-occupancy-resource-usage-large-thread-groups/)<br/>
 1.3. [Getting the Most Out of Delta Color Compression (2016)](https://gpuopen.com/learn/dcc-overview/)<br/>
-1.4. [Life of triangle (2020)](https://gpuopen.com/wp-content/uploads/2021/01/AMD_Graphics_pipeline_GIC2020.pdf), [[video](https://youtu.be/Y2KG_4OxDBg)], [[backup](../pdf/AMD_Graphics_pipeline_GIC2020.pdf)]<br/>
+1.4. [Life of triangle (2020)](https://gpuopen.com/wp-content/uploads/2021/01/AMD_Graphics_pipeline_GIC2020.pdf), [[video](https://youtu.be/Y2KG_4OxDBg)], [[backup](../pdf/AMD-Graphics_pipeline_GIC2020.pdf)]<br/>
 
-### GCN
-2.1. [ADVANCED SHADER PROGRAMMING ON GCN](https://gpuopen.com/wp-content/uploads/2017/03/GDC2017-Advanced-Shader-Programming-On-GCN.pdf)
+**GCN**<br/>
+2.1. [ADVANCED SHADER PROGRAMMING ON GCN](https://gpuopen.com/wp-content/uploads/2017/03/GDC2017-Advanced-Shader-Programming-On-GCN.pdf), [[backup](../pdf/AMD-GDC2017-Advanced-Shader-Programming-On-GCN.pdf)]
 
-### RDNA
+**RDNA**<br/>
 3.1. [RDNA Performance guide](https://gpuopen.com/performance/)<br/>
 3.2. [How mesh shaders are implemented in an AMD driver](https://timur.hu/blog/2022/how-mesh-shaders-are-implemented)<br/>
 3.3. [Task shader driver implementation on AMD HW](https://timur.hu/blog/2022/how-task-shaders-are-implemented)<br/>
 3.4. [What is NGG and shader culling on AMD RDNA GPUs?](https://timur.hu/blog/2022/what-is-ngg)<br/>
+3.5. [Occupancy explained through Insert picture the AMD RDNA architecture](https://gpuopen.com/presentations/2024/GPC24_Occupancy_explained.pdf), [[backup](../pdf/AMD-GPC24_Occupancy_explained.pdf)]<br/>
+
+**Wiki/Specs**<br/>
+4.1. [List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units)<br/>
+4.2. [Namu wiki, GCN](https://en.namu.wiki/w/Graphics%20Core%20Next)<br/>
+4.3. [Namu wiki, RDNA](https://en.namu.wiki/w/RDNA)<br/>
 
 
 ## Notes

@@ -19,7 +19,7 @@ Content:
 ## References
 
 1.1. [ARM Unveils Next Generation Bifrost GPU Architecture & Mali-G71](https://www.anandtech.com/show/10375/arm-unveils-bifrost-and-mali-g71)<br/>
-1.2. [Arm Mali-G71 Performance Counters Reference Guide](https://developer.arm.com/documentation/102641/0106), [[backup](../pdf/arm_mali-g71_performance_counters_reference_guide_102641_0105_en.pdf)]<br/>
+1.2. [Arm Mali-G71 Performance Counters Reference Guide](https://developer.arm.com/documentation/102641/0106), [[backup](../pdf/arm-mali-g71_performance_counters_reference_guide_102641_0105_en.pdf)]<br/>
 1.3. [Vulkan features for Mali-G71](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G71)<br/>
 
 ## Notes
@@ -44,7 +44,7 @@ Content:
 ## References
 
 2.1. [ARM Announces Mali-G72](https://www.anandtech.com/show/11459/arm-announces-malig72-bifrost-refined-for-the-highend-soc)<br/>
-2.2. [Arm Mali-G72 Performance Counters Reference Guide](https://developer.arm.com/documentation/102642/0106/), [[backup](../pdf/arm_mali-g72_performance_counters_reference_guide_102642_0106_en.pdf)]<br/>
+2.2. [Arm Mali-G72 Performance Counters Reference Guide](https://developer.arm.com/documentation/102642/0106/), [[backup](../pdf/arm-mali-g72_performance_counters_reference_guide_102642_0106_en.pdf)]<br/>
 2.3. [Mali-G52](https://developer.arm.com/Processors/Mali-G52)<br/>
 2.4. [Vulkan features for Mali-G52](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G52)<br/>
 
@@ -62,7 +62,7 @@ Content:
 
 ## References
 
-3.1. [Arm Mali-G76 Performance Counters Reference Guide](https://developer.arm.com/documentation/102697/latest/), [[backup](../pdf/arm_mali-g76_performance_counters_reference_guide_102697_0106_en.pdf)]<br/>
+3.1. [Arm Mali-G76 Performance Counters Reference Guide](https://developer.arm.com/documentation/102697/latest/), [[backup](../pdf/arm-mali-g76_performance_counters_reference_guide_102697_0106_en.pdf)]<br/>
 3.2. [Vulkan features for Mali-G76](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G76)<br/>
 
 ## Notes
@@ -77,12 +77,13 @@ Content:
 
 ## References
 
-1. [The Bifrost Shader Core](https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-4---the-bifrost-shader-core), [[backup](../pdf/the_bifrost_shader_core_102546_0100_02_en.pdf)]
+1. [The Bifrost Shader Core](https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-4---the-bifrost-shader-core), [[backup](../pdf/ARM-the_bifrost_shader_core_102546_0100_02_en.pdf)]
 2. [The Bifrost GPU architecture](https://old.hotchips.org/wp-content/uploads/hc_archives/hc28/HC28.22-Monday-Epub/HC28.22.10-GPU-HPC-Epub/HC28.22.110-Bifrost-JemDavies-ARM-v04-9.pdf)
 3. [Mesa driver details](https://docs.mesa3d.org/drivers/panfrost.html)
 4. [Everything we learnt from hacking Arm Mali GPUs](https://github.com/fxlin/mali)
-5. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm_gpu_best_practices_developer_guide_101897_0302_04_en.pdf)]
-6. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm_GPU_Datasheet_v3.pdf)]
+5. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-gpu_best_practices_developer_guide_101897_0303_09_en.pdf)]
+6. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm-GPU_Datasheet_v3.pdf)]
+7. [From Bifrost to Panfrost - deep dive into the first render](https://www.collabora.com/news-and-blog/blog/2020/04/23/from-bifrost-to-panfrost-deep-dive-into-the-first-render/)
 
 ## Notes
 
