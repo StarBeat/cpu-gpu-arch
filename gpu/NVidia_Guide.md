@@ -49,6 +49,7 @@
 7.2. [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)<br/>
 7.3. [Better Performance at Lower Occupancy (2010)](https://www.nvidia.com/content/gtc-2010/pdfs/2238_gtc2010.pdf)<br/>
 7.4. [CUDA Warps and Occupancy (2011)](https://developer.download.nvidia.com/CUDA/training/cuda_webinars_WarpsAndOccupancy.pdf)<br/>
+7.5. [GPU Glossary](https://modal.com/gpu-glossary)<br/>
 
 **Wiki/Specs**<br/>
 8.1. [List of Nvidia graphics processing units](https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units)

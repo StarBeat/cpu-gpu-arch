@@ -7,10 +7,10 @@
 4. [(video playlist) Arm Mali GPU Training Series](https://www.youtube.com/playlist?list=PLKjl7IFAwc4QUTejaX2vpIwXstbgf8Ik7)
 5. [Authoring Efficient Shaders for Optimal Mobile Performance](https://www.dropbox.com/s/ic0c6k0yzf2uk81/Authoring%20Efficient%20Shaders%20for%20Optimal%20Mobile%20Performance%20-%20GDC2022%20-Arm%20%26%20NaturalMotion.pdf?dl=0)
 6. [Memory limits with Vulkan on Mali GPUs](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/memory-limits-with-vulkan-on-mali-gpus)
-7. [Forward Pixel Kill](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/killing-pixels---a-new-optimization-for-shading-on-arm-mali-gpus)
+7. [Forward Pixel Kill](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/killing-pixels---a-new-optimization-for-shading-on-arm-mali-gpus), [[webarchive](https://web.archive.org/web/20240922023725/https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/killing-pixels---a-new-optimization-for-shading-on-arm-mali-gpus)]
 8. [GDC2015: How to Optimize Your Mobile Game with ARM Tools and Practical Examples](https://www.gdcvault.com/play/1022397/How-to-Optimize-Your-Mobile) (Midgard architecture)
 9. [Hidden Surface Removal in Immortalis-G925: The Fragment Prepass](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/immortalis-g925-the-fragment-prepass), [[webarchive](https://web.archive.org/web/20241202033355/https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/immortalis-g925-the-fragment-prepass)]<br/>
- 
+
 **Guide**<br/>
 1.1. [Accelerating 2D Applications](https://developer.arm.com/documentation/102524/0100/Overview)<br/>
 1.2. [Tile-Based Rendering](https://developer.arm.com/documentation/102662/0100/Overview)<br/>
@@ -150,8 +150,16 @@
 	- Starting from Mali Bifrost: MP4 equal to MC2 with 2 pixel per clock, MP3 is MC2 with different cores: 2 pixel per clock + 1 pixel per clock.
 	- Based on `VK_ARM_shader_core_builtins` they are same. [[az](https://github.com/azhirnov)]
 
-	
-* Fragment Pre-pass. What makes a draw call compatible: [9]
+* Forward Pixel Kill:
+	- Calculations already in flight can be terminated at any time if we spot that a later thread will write opaque data to the same pixel location. Since each thread takes a finite time to complete, we have a window in time which  we can exploit to kill pixels already in the pipeline. [7]
+	- Situations where FPK commonly fails include draw calls using: [1]
+		* Alpha blended transparency
+		* Shader programmatic framebuffer access.
+		* Late ZS testing.
+		* Small triangles.
+	- Do not rely on the FPK optimization alone. An early ZS test is always more energy-efficient. [1]
+
+* Fragment Pre-pass. What makes a draw call incompatible: [9]
 	- A non-opaque draw call that writes Z or S.
 		* If draw that does not fully overwrite all render targets that have previously been written to in the tile, then it is effectively transparent.
 		* Draw calls that read the tile buffer are also considered transparent.

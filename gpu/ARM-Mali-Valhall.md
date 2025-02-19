@@ -20,15 +20,18 @@ Content:
 1.1. [Arm's New Mali-G77 & Valhall GPU Architecture](https://www.anandtech.com/show/14385/arm-announces-malig77-gpu)<br/>
 1.2. [Arm Mali-G77 Performance Counters Reference Guide](https://developer.arm.com/documentation/102730/latest/), [[backup](../pdf/arm-mali-g77_performance_counters_reference_guide_102730_0106_en.pdf)]<br/>
 1.3. [Vulkan features for Mali-G57](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G57)<br/>
-1.4. [Mali-G57 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/ARM_Mali_G57.md)<br/>
+1.4. [Mali-G57 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/ARM_Mali_G57.md)<br/>
 
 ## Notes
 
-* Static branching or early termination is not supported. [1.4]
 * 2 work queues: non-fragment, fragment. [1.2]
 * fragment density map
 
 * One subgroup can fill multiple triangles, but only with the same instanceIndex. [1.4]
+* AFBC new formats: [1.4]
+	- B10G11R11_UFLOAT_PACK32
+	- RG16F
+	- RG16_UNorm
 
 * core config [4]:
 	- 2 ALU
@@ -45,6 +48,8 @@ Content:
 
 * Mali-G68
 * Mali-G78
+
+### SoC
 * Google Tensor (Mali-G78 MP20)
 
 ## References
@@ -81,6 +86,7 @@ Content:
 * Mali-G610
 * Mali-G710
 
+### SoC
 * Rockchip RK 3588 (Mali-G610 MC4)
 * Google Tensor G2 (Mali-G710 MP7)
 
@@ -127,6 +133,8 @@ Content:
 * Mali-G615
 * Mali-G715
 * Immortalis-G715
+
+### SoC
 * Google Tensor G3, G4 (Mali-G715 MP7)
 
 ## References
@@ -178,11 +186,11 @@ Content:
 
 1. [Instruction Set Architecture](https://rosenzweig.io/Valhall-Documentation.pdf), [[backup](../pdf/ARM-Valhall-Documentation.pdf)]
 2. [Mesa driver details](https://docs.mesa3d.org/drivers/panfrost.html)
-3. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-gpu_best_practices_developer_guide_101897_0303_09_en.pdf)]
+3. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-arm-gpu_best_practices_developer_guide_3_3.pdf)]
 4. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm-GPU_datasheet_v7.pdf)]
 5. [PanCSF: A new DRM driver for Mali CSF-based GPUs](https://www.collabora.com/news-and-blog/news-and-events/pancsf-a-new-drm-driver-for-mali-csf-based-gpus.html)
 6. [Writing an open source GPU driver - without the hardware](https://www.collabora.com/news-and-blog/blog/2022/01/27/writing-an-open-source-gpu-driver-without-the-hardware/)
-7. [reverse-engineered Mali Valhall ISA](https://gitlab.freedesktop.org/panfrost/valhall-docs/-/blob/main/Overview.md) 
+7. [reverse-engineered Mali Valhall ISA](https://gitlab.freedesktop.org/panfrost/valhall-docs/-/blob/main/Overview.md)
 
 
 ## Notes

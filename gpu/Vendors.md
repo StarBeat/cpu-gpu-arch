@@ -83,7 +83,7 @@ Content:
 * [Turing (RTX 2000)](NVidia-Turing.md)
 * [Ampere (RTX 3000](NVidia-Ampere.md)
 * [Ada (RTX 4000)](NVidia-Ada.md)
-* Blackwell (RTX 5000)
+* [Blackwell 2.0 (RTX 5000)](NVidia-Blackwell.md)
 
 ### Specs & Guide
 
@@ -130,9 +130,10 @@ Content:
 
 ### Architecture
 
-* [5xx](Adreno-5xx.md)
-* [6xx](Adreno-6xx.md)
-* [7xx, X](Adreno-7xx.md)
+* [500](Adreno-500.md)
+* [600](Adreno-600.md)
+* [700, X](Adreno-700.md)
+* [800](Adreno-800.md)
 
 ### Specs & Guide
 

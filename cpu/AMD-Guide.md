@@ -8,6 +8,7 @@
 5. [GDC2023 AMD Ryzen Processor Software Optimization (Zen4)](https://gpuopen.com/gdc-presentations/2023/GDC-2023-AMD-Ryzen-Processor-Software-Optimization.pdf), [[backup](../pdf/AMD-GDC-2023-AMD-Ryzen-Processor-Software-Optimization.pdf)]
 6. [Lists of instruction latencies, throughputs and micro-operation breakdowns for Intel, AMD, and VIA CPUs](https://agner.org/optimize/instruction_tables.pdf)
 7. [The microarchitecture of Intel, AMD, and VIA CPUs](https://agner.org/optimize/microarchitecture.pdf)
+8. [YouTube: AMD Developer Central](https://www.youtube.com/@AMDDevCentral/videos)
 
 ## Notes
 

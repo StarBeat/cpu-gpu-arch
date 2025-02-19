@@ -14,6 +14,7 @@ Content:
 * Mali-G51
 * Mali-G71
 
+### SoC
 * Rockchip RK3326 (Mali-G31)
 
 ## References
@@ -39,6 +40,7 @@ Content:
 * Mali-G52
 * Mali-G72
 
+### SoC
 * Rockchip RK3562, RK3566, RK3568 (Mali-G52-2EE)
 
 ## References
@@ -81,7 +83,7 @@ Content:
 2. [The Bifrost GPU architecture](https://old.hotchips.org/wp-content/uploads/hc_archives/hc28/HC28.22-Monday-Epub/HC28.22.10-GPU-HPC-Epub/HC28.22.110-Bifrost-JemDavies-ARM-v04-9.pdf)
 3. [Mesa driver details](https://docs.mesa3d.org/drivers/panfrost.html)
 4. [Everything we learnt from hacking Arm Mali GPUs](https://github.com/fxlin/mali)
-5. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-gpu_best_practices_developer_guide_101897_0303_09_en.pdf)]
+5. [Arm GPU Best Practices Developer Guide](https://developer.arm.com/documentation/101897/latest/), [[backup](../pdf/arm-arm-gpu_best_practices_developer_guide_3_3.pdf)]
 6. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm-GPU_Datasheet_v3.pdf)]
 7. [From Bifrost to Panfrost - deep dive into the first render](https://www.collabora.com/news-and-blog/blog/2020/04/23/from-bifrost-to-panfrost-deep-dive-into-the-first-render/)
 

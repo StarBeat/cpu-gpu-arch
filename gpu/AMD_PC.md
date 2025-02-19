@@ -33,7 +33,8 @@
 **GDS** - Global Data Share. The GDS is a globally shared explicitly addressed memory that is similar to the LDS and can synchronize all wavefronts as well as fixed function hardware. The GDS also contains ALUs used for global atomic operations.<br/>
 **GRBM** - Graphics Register Bus Management.<br/>
 **GlobalMemory** - ?<br/>
-**HiZ** - ?<br/>
+**HiZ** - Hierarchical Z, allows tiles of pixels to be rejected in a hierarchical fashion. This allows for faster rejection of occluded pixels and offers some bandwidth saving by doing a rough depth test using lower resolution buffers first instead of reading individual depth samples.<br/>
+**HTILE** - HiZ Depth Compression. Every group of 8x8 pixels has a 32bit meta data block.<br/>
 **IOP** - Integer Operation.<br/>
 **LDS** - Local Data Share. Which a low-latency and high-bandwidth explicitly addressed memory that is used for synchronization within a workgroup and for some graphics functions associated with texturing. Same as shared memory in CUDA.<br/>
 **MemoryCache** - ?<br/>
@@ -44,7 +45,7 @@
 **PA_SC** - ?<br/>
 **PA_SU** - ?<br/>
 **RW** - Coherently Cached with Write.<br/>
-**SALU** - Scalar ALU. Can only be used for a limited set of operations, like integer and logical.<br/>
+**SALU** - Scalar ALU. Can only be used for a limited set of operations, like integer and logical. Also see SALU notes for GPU architecture.<br/>
 **SC** - shader core? <br/>
 **SGPR** - Scalar General Purpose Registers. Represent a set of registers used to store data that is known to be uniform across the wavefront at compile-time. SGPRs are manipulated by the Scalar ALU (SALU). <br/>
 **Shader Engine** - ?<br/>
@@ -56,7 +57,7 @@
 **SQ_VS** - ?<br/>
 **SQ_GS** - ?<br/>
 **SQ_ES** - ?<br/>
-**SPI** - Shader Processor Input.<br/>
+**SPI** - Shader Processor Input/Interpolator.<br/>
 **SH** - ?<br/>
 **SMEM** - Scalar memory operations. SMEM transfers data between scalar registers and memory through scalar data cache. The SMEM instruction reads/writes consecutive DWORDs between SGPRs and memory.<br/>
 **s​L1D** - Scalar Level-1 Data Cache.<br/>

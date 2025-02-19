@@ -12,7 +12,7 @@
 **Color Cache** - <br/>
 **Command Streamer** - <br/>
 **Depth Cache** - <br/>
-**EU** -<br/>
+**EU** - Execution Unit, **Xe-Core** on Xe architectures.<br/>
 **FPU** -<br/>
 **FPU0 pipe** -<br/>
 **FPU1 pipe** -<br/>
@@ -25,6 +25,10 @@
 **Stream Output** - <br/>
 **Stencil Cache** - <br/>
 **Thread Dispatcher** - <br/>
+**XVE** - Xe Vector engine, part of Xe Core.<br/>
+**SLM** - Shared Local Memory.<br/>
+**XMX** - tensor core.<br/>
+**SIMD1** - scalar register.<br/>
 
 ### Timings
 

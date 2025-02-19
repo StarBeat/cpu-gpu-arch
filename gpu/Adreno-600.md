@@ -16,7 +16,7 @@
 4. [Correction on Qualcomm iGPUs](https://chipsandcheese.com/2024/05/06/correction-on-qualcomm-igpus/)
 5. [Vulkan features for Adreno 660](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20660), [Turnip Adreno 650](https://vulkan.gpuinfo.org/listreports.php?devicename=Turnip%20Adreno%20(TM)%20650)
 6. [Qualcomm Announces Snapdragon 865 and 765(G)](https://www.anandtech.com/show/15178/qualcomm-announces-snapdragon-865-and-765-5g-for-all-in-2020-all-the-details)
-7. [Adreno 660 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/Adreno_660.md)
+7. [Adreno 660 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/Adreno_660.md)
 
 
 ## Notes
@@ -25,6 +25,10 @@
  "During the binning pass, a low resolution Z-buffer is constructed, and can reject LRZ-tile wide contributions to boost binning performance. This LRZ is then used during the rendering pass to reject pixels efficiently before testing against the full resolution Z-buffer."
 * Has forward pass (immediate mode rendering) for fullscreen quad/triangle.
 * Supports wave64 and wave128 execution. In Vulkan has maxSubgroupSize = 128.
+
+* Framebuffer compression formats:
+	- tested: RGBA8, RGBA16_UNorm [7]
+	- not supported: RGBA32F [7]
 
 * Adreno 660 core config:
 	- 384 ALU

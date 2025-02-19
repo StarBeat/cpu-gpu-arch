@@ -16,7 +16,7 @@
 3. [Correction on Qualcomm iGPUs](https://chipsandcheese.com/2024/05/06/correction-on-qualcomm-igpus/)
 4. [Vulkan features for Adreno 540](https://vulkan.gpuinfo.org/listreports.php?devicename=Adreno%20(TM)%20540)
 5. [Game Developer Guides](https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/developer-guide/gpu/gpu.html), [[webarchive](https://web.archive.org/web/20220104180856/https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/developer-guide/gpu/gpu.html)]
-6. [Adreno 505 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/Adreno_505.md)
+6. [Adreno 505 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/Adreno_505.md)
 
 
 ## Notes
@@ -29,12 +29,8 @@
 * On A5X, GPUs push constants are not recommended. [5]
 * On A5X GPUs, one (1) texture per fragment at full rate is equivalent to 16 full precision ALUs. [5]
 
-* Adreno 660 core config:
-	- 48 ALU
-	- 650 MHz
-	- fp64:  15.6 gflops, 1/4 fp32
-	- fp32:  62.4 gflops
-	- fp16: 124.8 gflops, 2x fp32
+* Framebuffer compression formats:
+	- tested: RGBA8 [6]
 
 **Adreno 530**:
 * has 2 compute queues. [2]

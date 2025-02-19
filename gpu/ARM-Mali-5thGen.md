@@ -41,7 +41,7 @@ Content:
 	- fmaRate: 128 -- maximum number of single-precision fused multiply-add operations per clock per shader core.
 	- pixelRate: 4 -- maximum number of pixels output per clock per shader core.
 	- texelRate: 8 -- maximum number of texels per clock per shader core.
-	
+
 
 # Gen2
 
@@ -72,7 +72,7 @@ Content:
 	- 4 pix/cy
 	- 8 tex/cy
 
-	
+
 * Immortalis-G925-Immortalis MC12 VK_ARM_shader_core_builtins, VK_ARM_shader_core_properties [2.3]:
 	- shaderCoreCount: 12
 	- shaderWarpsPerCore: 64 -- maximum number of simultaneously executing warps on a shader core

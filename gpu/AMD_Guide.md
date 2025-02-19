@@ -1,6 +1,8 @@
 
 ## References
 
+1. [YouTube: AMD Developer Central](https://www.youtube.com/@AMDDevCentral/videos)
+
 **Performance**<br/>
 1.1. [Understanding GPU context rolls (2018)](https://gpuopen.com/learn/understanding-gpu-context-rolls/)<br/>
 1.2. [Optimizing GPU occupancy and resource usage with large thread groups (2017)](https://gpuopen.com/learn/optimizing-gpu-occupancy-resource-usage-large-thread-groups/)<br/>
@@ -16,11 +18,15 @@
 3.3. [Task shader driver implementation on AMD HW](https://timur.hu/blog/2022/how-task-shaders-are-implemented)<br/>
 3.4. [What is NGG and shader culling on AMD RDNA GPUs?](https://timur.hu/blog/2022/what-is-ngg)<br/>
 3.5. [Occupancy explained through Insert picture the AMD RDNA architecture](https://gpuopen.com/presentations/2024/GPC24_Occupancy_explained.pdf), [[backup](../pdf/AMD-GPC24_Occupancy_explained.pdf)]<br/>
+3.6. [The hidden cost of shader instructions](https://interplayoflight.wordpress.com/2025/01/19/the-hidden-cost-of-shader-instructions/)
 
 **Wiki/Specs**<br/>
 4.1. [List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units)<br/>
 4.2. [Namu wiki, GCN](https://en.namu.wiki/w/Graphics%20Core%20Next)<br/>
 4.3. [Namu wiki, RDNA](https://en.namu.wiki/w/RDNA)<br/>
+
+**Pre-GCN**<br/>
+5.1. [Depth In-depth (2007)](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ef95d232b78146cc16e6212cc062fb622136f3f3) - HiZ
 
 
 ## Notes
@@ -39,3 +45,7 @@
 
 * This flexibility allows the driver to implement every vertex/geometry processing stage using NGG. Vertex, tess eval and geometry shaders can all be compiled to NGG “primitive shaders”. [3.2]
 * Task shaders are executed on an async compute queue. Because task shaders are executed on a different HW queue, there is some overhead. [3.3]
+
+* Waterfall loop happens when used array of buffers/textures and index is not the same for all threads. The compiler will add extra code to batch resource access by index. [3.6]
+* RDNA GPUs LDS is divided in 32 banks and the optimal access pattern is for each thread to access a different bank. [3.6]
+	- Divergence from this access pattern can introduce conflicts and increased instruction latency, in the following extreme case where consecutive threads attempt to access the same memory bank. This will serialise access and can increase the instruction latency by 32 times.

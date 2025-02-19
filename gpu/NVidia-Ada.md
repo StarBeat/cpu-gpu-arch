@@ -1,3 +1,4 @@
+Codename: AD10x
 
 ## Examples
 
@@ -14,7 +15,17 @@
 
 ## Notes
 
+## Features
+
+* DLSS Frame Generation.
+* Tensor core with FP8 format.
+
+
 ## Specs
 
 * ops/clock per SM: [5]
-	- TODO
+	- 128 fp16 FMA
+	- 128 fp32 FMA
+	- 2 fp64 FMA
+	- 64 i32
+	- 16 SFU

@@ -1,3 +1,4 @@
+Codename: TU10x, TU11x
 
 ## Examples
 
@@ -22,7 +23,7 @@ With RTX:
 7. [Dissecting the Turing GPU Architecture through Microbenchmarking](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9839-discovering-the-turing-t4-gpu-architecture-with-microbenchmarks.pdf), [[backup](../pdf/NV-discovering-the-turing-t4-gpu-architecture-with-microbenchmarks.pdf)]
 8. [Compute Capability 7.5](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-7-x)
 9. [Vulkan features for RTX 2080](https://vulkan.gpuinfo.org/listreports.php?devicename=NVIDIA%20GeForce%20RTX%202080)
-10. [RTX 2080 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/NVidia_RTX2080.md)
+10. [RTX 2080 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/NVidia_RTX2080.md)
 
 ## Notes
 
@@ -74,6 +75,9 @@ With RTX:
 * higher L1/L2 cache and global memory bandwidth. [7]
 * higher arithmetic throughput for matrix math. [7]
 * new L0 instruction cache. [7]
+* DLSS
+* Tensor core with FP16 format.
+
 
 ## Specs
 
@@ -92,7 +96,7 @@ With RTX:
 * [7]
 	- 4 Load/Store Units (LSU) per scheduler
 	- 1024 threads per SM
-	- upper limit of total registers is 256, including both regular and uniform registers 
+	- upper limit of total registers is 256, including both regular and uniform registers
 * registers:
 	- use a physical register file of 16 384, 32-bit elements in each processing block [4]
 	- 64 uniform registers per thread [7]
@@ -140,6 +144,7 @@ With RTX:
 	- 113.8 Tensor TFLOPS
 	- 10 Giga Rays/sec
 	- 78 Tera RTX-OPS
+	- 20 GTris/s
 
 * TU102 GPU (RTX 2080 Ti / Quadro RTX 6000): [2]
 	- 6 Graphics Processing Clusters (GPCs)

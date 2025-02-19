@@ -1,3 +1,4 @@
+Codename: GP10x
 
 ## Examples
 
@@ -22,6 +23,12 @@
 6. [Vulkan features for GTX 1080](https://vulkan.gpuinfo.org/listreports.php?devicename=NVIDIA%20GeForce%20GTX%201080)
 
 
+## Features
+
+* Tile based rasterization (TBR). [5]
+* Async compute queue. [2]
+* Software ray tracing.
+
 ## Notes
 
 * Adds support for native FP16 instructions. [3]
@@ -41,12 +48,7 @@
 	- instructions IMAD and IMUL have a long latency because they are emulated.
 	- most integer and single-precision instructions have a latency of 6 cycles; double-precision instructions have a latency of 8 cycles; more complex instructions, some of which run on the SFU, require 14 cycles.
 
-
-## Features
-
-* Tile based rasterization (TBR). [5]
-* Async compute queue. [2]
-* Software ray tracing.
+* Cores could be used for FP32 or INT32, no concurrent execution per partition.
 
 ## Specs
 

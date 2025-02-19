@@ -41,6 +41,7 @@ Content:
 * Mali-T720
 * Mali-T760
 
+### SoC
 * Rockchip RK3288 (Mali-T760 MP4)
 
 ## References
@@ -65,6 +66,7 @@ Content:
 * Mali-T860
 * Mali-T880
 
+### SoC
 * Rockchip RK3399 (Mali-T860)
 
 ## References
@@ -72,9 +74,9 @@ Content:
 4.1. [ARM Announces Mali 800 Series GPUs](https://www.anandtech.com/show/8649/arm-announces-mali-800-series-gpus-t860-t830-t820)<br/>
 4.2. [Arm Mali-T820 and Arm Mali-T830 Performance Counters Reference Guide](https://developer.arm.com/documentation/108059/latest/), [[backup](../pdf/arm-mali-t820_and_arm_mali-t830_performance_counters_reference_guide_108059_0102_en.pdf)]<br/>
 4.3. [Arm Mali-T860 and Arm Mali-T880 Performance Counters Reference Guide](https://developer.arm.com/documentation/108061/0103)<br/>
-4.4. [Vulkan features for Mali-T880](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-T880)<br/>
+4.4. [Vulkan features for Mali-T880](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-T880), [T830](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-T830)<br/>
 4.5. [Mali-T880 is set to Deliver the Premium Mobile Experience of 2016](https://community.arm.com/arm-community-blogs/b/graphics-gaming-and-vr-blog/posts/mali-t880-is-set-to-deliver-the-premium-mobile-experience-of-2016)<br/>
-4.6. [Mali-T830 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/ARM_Mali_T830.md)<br/>
+4.6. [Mali-T830 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/ARM_Mali_T830.md)<br/>
 
 ## Notes
 

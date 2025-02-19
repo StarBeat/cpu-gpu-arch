@@ -1,3 +1,4 @@
+Codename: GA10x
 
 ## Examples
 
@@ -20,19 +21,28 @@
 
 * SM continues to support double-speed FP16 (HFMA) operations which are supported in Turing. [1]
 * Added BF16 type. [1]
-* fp32 : fp16 : bf16 has same tflops. [1]
+* fp32 : fp16 : bf16 has same TOp/s. [1]
 * fp32 : i32 has 2:1 rate. [1]
 
 * Includes FP32 processing on both datapaths, doubling the peak processing rate for FP32 operations. One datapath in each partition consists of 16 Ampere GPU Architecture In-Depth NVIDIA Ampere GA102 GPU Architecture 13 FP32 CUDA Cores capable of executing 16 FP32 operations per clock. Another datapath consists of both 16 FP32 CUDA Cores and 16 INT32 Cores, and is capable of executing either 16 FP32 operations OR 16 INT32 operations per clock. [1]
-* GeForce RTX 3080 L1 bandwidth: 219 GB/sec
+
+
+
+## Features
 
 * Work graphs.
+* AV1.
+* PCIe Gen4.
 
 
 ## Specs
 
 * ops/clock per SM: [4]
-	- TODO
+	- 128 fp16 FMA (2xFP16 on 1 datapath)
+	- 128 fp32 FMA (2 datapath)
+	- 2 fp64 FMA
+	- 64 i32 (1 datapath)
+	- 16 SFU
 
 * RTX 3080 specs:
 	- shaderSMCount: 68 [vk]
@@ -42,3 +52,5 @@
 	- total threads: 69 632 [calc] *(68 * 32 * 32)*
 	- Clock: 1440 MHz / 1710 MHz [specs]
 	- FP32 TFLOPS: 29.77 [specs], 37.6 [calc] *{104.4K threads * 1.44GHz / (4cycles (5?) for ADD/MUL/FMA)}*
+
+* GeForce RTX 3080 L1 bandwidth: 219 GB/s

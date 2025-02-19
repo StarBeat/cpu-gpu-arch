@@ -28,3 +28,22 @@
 7. [Vulkan features for RX 6700 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%206700%20XT)
 
 ## Notes
+
+* 2xfp16 instructions: [1]
+	- V_PK_FMA_F16, V_PK_ADD_F16, V_PK_MUL_F16, V_PK_MIN_F16, V_PK_MAX_F16.
+	- V_PK_FMAC_F16 -- Multiply packed FP16 values and accumulate with destination.
+	- CVT_PKNORM_I16_F16, CVT_PKNORM_U16_F16 -- Convert two FP16 values into packed unsigned normalized shorts.
+	- V_CVT_PKRTZ_F16_F32 -- Convert two single-precision floats into a packed FP16 result and always round to zero (ignore the current rounding mode).
+	- V_DOT2C_F32_F16, V_DOT2_F32_F16 -- Dot product of packed FP16 values.
+* MIX instructions: [1]
+	- allow to combine fp32 and fp16, fp16_lo and fp16_hi.
+	- V_FMA_MIX_F32, V_FMA_MIXLO_F16, V_FMA_MIXHI_F16.
+
+## Features
+
+* Hardware ray tracing.
+* Mesh shading.
+* AV1.
+
+## Specs
+

@@ -13,7 +13,7 @@
 4. [Optimization](https://gpuopen.com/wp-content/uploads/slides/GPUOpen_Let%E2%80%99sBuild2020_Optimizing%20for%20the%20Radeon%20RDNA%20Architecture.pdf), [[backup](../pdf/AMD-GPUOpen_LetsBuild2020_Optimizing_for_the_Radeon_RDNA_Architecture.pdf)]
 5. [(video) Optimizing for the Radeon RDNA Architecture](https://www.youtube.com/watch?v=7eEKLUhoTQs)
 6. [AMD Announces Radeon RX 5700 XT & RX 5700](https://www.anandtech.com/show/14528/amd-announces-radeon-rx-5700-xt-rx-5700-series)
-7. [Vulkan features for RX 5700 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%205700%20XT%20(RADV%20NAVI10))
+7. [Vulkan features for RX 5700 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%205700%20XT)
 
 ## Notes
 
@@ -122,6 +122,15 @@
 		* DPP16 allows a set of predefined swizzles between groups of 16 lanes
 		* These operations take the SP multiple instruction cycles (at least 8 times what an ADD_F32 takes).
 
+* 2xfp16 instructions: [3]
+	- V_PK_FMA_F16, V_PK_ADD_F16, V_PK_MUL_F16, V_PK_MIN_F16, V_PK_MAX_F16.
+	- V_MAD_MIX_F32 -- perform a single MAD operation on a mixture of 16- and 32-bit inputs.
+	- V_PK_FMAC_F16 -- Multiply packed FP16 values and accumulate with destination.
+	- CVT_PKNORM_I16_F16, CVT_PKNORM_U16_F16 -- Convert two FP16 values into packed unsigned normalized shorts.
+	- V_CVT_PKRTZ_F16_F32 -- Convert two single-precision floats into a packed FP16 result and always round to zero (ignore the current rounding mode).
+* MIX instructions: [3]
+	- allow to combine fp32 and fp16, fp16_lo and fp16_hi.
+	- V_FMA_MIX_F32, V_FMA_MIXLO_F16, V_FMA_MIXHI_F16.
 
 ## Features
 

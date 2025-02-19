@@ -12,7 +12,7 @@
 1. [Imagination Announces B-Series GPU IP](https://www.anandtech.com/show/16155/imagination-announces-bseries-gpu-ip-scaling-up-with-multigpu)
 2. [Imagination Launches IMG B-Series](https://www.techpowerup.com/273334/imagination-launches-img-b-series-doing-more-with-multi-core-up-to-6-teraflops-of-compute)
 3. [Vulkan features for BXM-8-256](https://vulkan.gpuinfo.org/listreports.php?devicename=PowerVR%20BXM-8-256)
-4. [BXM-8-256 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench/PowerVR_BXM.md)
+4. [BXM-8-256 Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/PowerVR_BXM.md)
 
 ## Notes
 
@@ -25,6 +25,9 @@
 	- IMG BXM: This includes high-efficiency performance cores balancing fill rate and compute in a compact silicon area for mid-range mobile gaming and complex UI solutions for DTV and other markets.
 	- IMG BXT: This is focused on high performance for real-world applications, scaling from the device in your hand to the datacenter. The flagship B-Series GPU is a four-core part generating 6.0 teraflops of performance, 192 gigapixels per second, and 24 trillion operations per second (TOPS) for AI.
 	- IMG BXS: These automotive GPUs are ISO 26262-capable. They range from entry to premium, delivering solutions for next-generation HMI, UI display, infotainment, digital cockpit, and surround view to multi-teraflop compute-focused configurations for autonomy and advanced driver assistance systems (ADAS).
+
+* Framebuffer compression formats:
+	- tested: RGBA8, RGBA16F, RGBA16_UNorm, RGBA32F [4]
 
 ## Specs
 

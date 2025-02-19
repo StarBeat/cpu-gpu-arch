@@ -250,7 +250,7 @@ Warp width:       16 threads
 | FragTileKillRate | Unchanged tile kill percentage | percent |
 | FragOverdraw | Fragments per pixel | threads | Number of fragments shaded per output pixel. GPU processing cost per pixel accumulates with the layer count. High overdraw can build up to a significant processing cost, especially when rendering to a high-resolution framebuffer. Minimize overdraw by rendering opaque objects front-to-back and minimizing use of blended transparent layers. *Note: 32 primitives per pixel equal to 2.0* |
 | FragRastPartQdRate | Partial coverage percentage | percent |
-| FragFPKBUtil | Fragment FPK buffer utilization | percent | 
+| FragFPKBUtil | Fragment FPK buffer utilization | percent |
 | TilerUtil | Tiler utilization | percent |
 | ExtBusWrOTQ4 | Output external outstanding writes 75-100% | transactions |
 | ExtBusRdOTQ4 | Output external outstanding reads 75-100% | transactions |
