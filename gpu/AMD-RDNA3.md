@@ -34,7 +34,8 @@
 9. [Microbenchmarking AMD’s RDNA 3 Graphics Architecture](https://chipsandcheese.com/2023/01/07/microbenchmarking-amds-rdna-3-graphics-architecture/)
 10. [AMD RDNA3 mesh shading with RADV](https://timur.hu/blog/2024/rdna3-mesh-shading)
 11. [AMD Reveals Radeon RX 7900 XTX and 7900 XT](https://www.anandtech.com/show/17638/amd-reveals-radeon-rx-7900-xtx-and-7900-xt-first-rdna-3-parts-to-hit-shelves-in-december)
-12. [Vulkan features for RX 7900 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%207900%20XT), [Radeon 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon%28TM%29+890M+Graphics), [Radeon 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20780M%20Graphics)
+12. [Vulkan features for RX 7900 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%207900%20XT), [Radeon 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20780M%20Graphics)
+13. [How to accelerate AI applications on RDNA 3 using WMMA](https://gpuopen.com/learn/wmma_on_rdna3/)
 
 
 ## Features
@@ -157,6 +158,10 @@
 	- 2x SIMDs (simdPerComputeUnit)
 	- Ray tracing accelerator
 	- L0 vector cache: 16 KB
+	- Matrix core with: [link](https://gpuopen.com/learn/matrix_core_amd_rdna4/)
+		* 512 fp16 FLOPS/clk
+		* 512 bf16 FLOPS/clk
+		* 512 i8 FLOPS/clk
 
 * SIMD config: [12]
 	- 32x FMA

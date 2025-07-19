@@ -2,12 +2,10 @@
 # Arc Alchemist
 
 Generation: 12.7<br/>
-CPU code name: Meteor Lake, Lunar Lake.<br/>
+CPU code name: Meteor Lake.<br/>
 Architecture: Xe-HPG (high performance graphics)<br/>
 
 ## Examples
-
-### Meteor Lake
 
 **Desktop**
 * Arc 3: A310, A380
@@ -19,11 +17,6 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 * Arc 5: A530M, A550M, A570M
 * Arc 7: A730M, A770M
 
-### Lunar Lake
-
-**Mobile**
-* Arc 140V
-
 
 ## References
 
@@ -31,6 +24,7 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 1.2. [Intel’s Ambitious Meteor Lake iGPU](https://chipsandcheese.com/2024/04/08/intels-ambitious-meteor-lake-igpu/)<br/>
 1.3. [Vulkan features for Arc A380](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20A380%20Graphics)<br/>
 1.4. [Intel’s Battlemage Architecture](https://chipsandcheese.com/p/intels-battlemage-architecture) - compared with Arc<br/>
+1.5. [Xe-HPG Architecture White Paper](https://cdrdv2-public.intel.com/758302/introduction-to-the-xe-hpg-architecture-white-paper.pdf)<br/>
 
 ## Features
 
@@ -39,6 +33,7 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 * Mesh shading.
 * Async compute queue.
 * Async transfer queue.
+* Sampler feedback.
 
 ## Notes
 
@@ -57,7 +52,7 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 	
 # Intel Xe-LPG
 
-CPU code name: Tiger Lake, Rocket Lake, Alder Lake, Raptor Lake.<br/>
+CPU code name: Tiger Lake, Rocket Lake, Alder Lake, Raptor Lake, Twin Lake.<br/>
 Architecture: Xe-LPG (low power graphics)
 
 ## Examples
@@ -67,13 +62,23 @@ Architecture: Xe-LPG (low power graphics)
 
 ## References
 
-2.1. [Intel Processor Graphics Architecture](https://cdrdv2-public.intel.com/686065/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf), [[backup](../pdf/Intel-the-architecture-of-intel-processor-graphics-gen11-r1new.pdf)]<br/>
 2.2. [Intel Processor Graphics Xᵉ-LP API Developer and Optimization Guide](https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html), [[webarchive](https://web.archive.org/web/20230623012301/https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html)]<br/>
-2.3. [Vulkan features for Iris Xe](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Iris(R)%20Xe%20Graphics), [UHD Graphics 770](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20UHD%20Graphics%20770)<br/>
+2.3. [Vulkan features for Iris Xe](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Iris(R)%20Xe%20Graphics), [UHD Graphics 770](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20UHD%20Graphics%20770), [RaptorLake-S](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20RaptorLake-S%20Mobile%20Graphics%20Controller), [N150 (UHD Graphics 730)](https://vulkan.gpuinfo.org/displayreport.php?id=39319)<br/>
 2.4. [Intel’s Ambitious Meteor Lake iGPU](https://chipsandcheese.com/p/intels-ambitious-meteor-lake-igpu)<br/>
+
+## Features
+
+* Fragment shading rate.
+* Vulkan video decode.
+* Fragment shader interlock.
+* Sampler feedback.
+* XeSS Supper resolution.
 
 ## Notes
 
+* iGPU without ray tracing and mesh shading. [1.5]
+
+* Independent scheduling queues.
 * A XVE can have up to eight threads in flight. [2.4]
 * Statically allocates register file capacity for in-flight threads. [2.4]
 	- Every thread gets 128 registers, regardless of whether it needs them all. Occupancy (live threads) can’t be limited by register file capacity.
@@ -84,3 +89,30 @@ Architecture: Xe-LPG (low power graphics)
 * Xe Core (EU): [2.4]
 	- 128 fp32 FLOPS/cy
 	- 16x 256 bit Vector engines
+
+
+# Intel Xe+ LPG
+
+CPU code name: Arrow Lake, Meteor Lake.<br/>
+Architecture: Xe+ LPG (low power graphics)
+
+## Examples
+
+* iGPU in Core Ultra 100
+* iGPU in Core Ultra 200 except 200V
+* Arc 130T, 140T
+ 
+## References
+
+3.1. [Vulkan features for Arc 140T](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20140T%20GPU%20(32GB))<br/>
+
+## Features
+
+* Arrow Lake-H: XeSS super resolution, frame generation, low latency
+* Arrow Lake-S, Meteor Lake: XeSS super resolution, low latency
+
+## Notes
+
+* Same features as in Xe-HPG
+* XMX engine
+

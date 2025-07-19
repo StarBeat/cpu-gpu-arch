@@ -282,7 +282,7 @@
 * AVX2, AVX-VNNI
 * E-core: without SMT.
 * two "Skymont" E-core clusters sharing an L3 cache. [1]
-
+* iGPU with Xe-LPG graphics architecture. [1]
 
 
 # Raptor Lake (2022)
@@ -374,7 +374,7 @@ Core Ultra Series 1.
 
 ## Notes
 
-* Arc Graphics
+* Arc Graphics (Xe-LPG)
 
 * P-core Cache:
 	- L1 Instruction: 64 KB per core
@@ -422,6 +422,8 @@ Core Ultra Series 2.
 	* Removed Simultaneous multithreading (SMT).
 	* AVX512 supported but disabled.
 
+* Arc Graphics 130T, 140T (Xe+ LPG)
+
 
 # Lunar Lake (2024)
 Core Ultra 200V Series.
@@ -440,6 +442,7 @@ Core Ultra 200V Series.
 
 * SHA-512 instructions.
 * Memory: LPDDR5X-8533
+* Arc Graphics 130V, 140V (Xe2-LPG)
 
 
 # Sapphire Rapids (2023)

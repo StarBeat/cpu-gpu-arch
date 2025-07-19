@@ -107,6 +107,24 @@ Content:
 4.9. [Arm Introduces The Cortex-X4, Its Newest Flagship Performance Core](https://fuse.wikichip.org/news/7531/arm-introduces-the-cortex-x4-its-newest-flagship-performance-core/)<br/>
 4.10. [Arm Launches Next-Gen Efficiency Core; Cortex-A520](https://fuse.wikichip.org/news/7527/arm-launches-next-gen-efficiency-core-cortex-a520/)<br/>
 
+
+# Taishan
+
+## Examples
+
+* TaishanV110, TaishanV120, TaishanV123
+
+## References
+
+5.1. [Huawei Expands Kunpeng Server CPUs, Plans SMT, SVE For Next Gen](https://fuse.wikichip.org/news/2274/huawei-expands-kunpeng-server-cpus-plans-smt-sve-for-next-gen/)
+
+## Notes
+
+* TaishanV110:
+	- Each core is a 4-way out-of-order superscalar that implements the ARMv8.2-A ISA. [5.1]
+	- compared to Arm’s Cortex cores, Taishan core features an improved memory subsystem, a larger number of execution units, and a better branch predictor. [5.1]
+	
+
 # All
 
 ## References

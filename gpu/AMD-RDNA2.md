@@ -67,6 +67,9 @@
 	- 2x SIMDs (simdPerComputeUnit)
 	- Ray tracing accelerator
 	- L0 vector cache: 16 KB
+	- Matrix core with: [link](https://gpuopen.com/learn/matrix_core_amd_rdna4/)
+		* 256 fp16 FLOPS/clk
+		* 512 i8 FLOPS/clk
 
 * SIMD config: [5, 7]
 	- 32x FMA

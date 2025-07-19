@@ -66,7 +66,7 @@
 	- Most processors (certainly all x86 and x86-64 processors) ignore errors resulting from invalid pointers which makes the life of the programmer significantly easier.
 	-  If the passed pointer references valid memory, the prefetch unit will be instructed to load the data into cache and, if necessary, evict other data.
 
-* Prefetching with a null pointer seems silly, but it's also costly: evidently every such prefetch on x86 machines (and, seemingly, ARM as well) causes a translation lookaside buffer miss and a pipeline stall. Each null prefetch cost about 20 processor cycles. [The problem with prefetch](https://lwn.net/Articles/444336/)
+* Prefetching with a null pointer seems silly, but it's also costly: evidently every such prefetch on x86 machines (and, seemingly, ARM as well) causes a translation lookaside buffer miss and a pipeline stall. Each null prefetch cost about 20 processor cycles. [[The problem with prefetch](https://lwn.net/Articles/444336/)]
 
 * As long as predictions hold, CPU executes a static instruction sequence: [2]
 	- Instructions are read, decoded, scheduled, executed, and retired.

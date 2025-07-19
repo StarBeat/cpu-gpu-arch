@@ -18,9 +18,10 @@
 3. [AMD RDNA 4 architecture deep dive](https://www.notebookcheck.net/AMD-RDNA-4-architecture-deep-dive-A-64-CU-monolithic-design-with-all-round-improvements-to-compute-media-encode-decode-ray-tracing-and-AI.969593.0.html)
 4. ["RDNA3.5" Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/rdna35_instruction_set_architecture.pdf), [[backup](../pdf/AMD-rdna3_5_isa.pdf)
 5. [RDNA 4's "Out-of-Order" Memory Accesses](https://chipsandcheese.com/p/rdna-4s-out-of-order-memory-accesses)
-6. [Vulkan features for RX 9070 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+RX+9070+XT)
+6. [Vulkan features for RX 9070 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+RX+9070+XT), [Radeon 890M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon%28TM%29+890M+Graphics)
 7. [RDNA 4’s Raytracing Improvements](https://chipsandcheese.com/p/rdna-4s-raytracing-improvements)
 8. [Dynamic Register Allocation on AMD's RDNA 4 GPU Architecture](https://chipsandcheese.com/p/dynamic-register-allocation-on-amds)
+9. [Using the Matrix Cores of AMD RDNA 4 architecture GPUs](https://gpuopen.com/learn/matrix_core_amd_rdna4/)
 
 ## Features
 
@@ -84,7 +85,7 @@
 	- Pixel Rate: 380.2 GPixel/s [specs]
 	- Texture Rate: 760.3 GTexel/s [specs]
 
-* Tensor core ops per CU (dense/sparse): [3]
+* Tensor core ops per CU (dense/sparse): [3, 9]
 	- fp32: 256
 	- fp64: 4
 	- fp16, bf16: 1024 / 2048

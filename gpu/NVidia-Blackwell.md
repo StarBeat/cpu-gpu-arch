@@ -11,6 +11,7 @@ Codename: GB100 (datacenter), GB20x (consumer)
 1. [Compute Capability 12.0](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-12-0)
 2. [A Deeper Analysis of Nvidia RTX 50 Blackwell GPU Architecture](https://www.guru3d.com/review/technical-analysis-of-nvidia-rtx-50-blackwell-gpu-architecture/)
 3. [NVIDIA RTX BLACKWELL GPU ARCHITECTURE (5090)](https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf)
+4. [Blackwell: Nvidia’s Massive GPU](https://chipsandcheese.com/p/blackwell-nvidias-massive-gpu)
 
 ## Features
 
@@ -41,6 +42,9 @@ Codename: GB100 (datacenter), GB20x (consumer)
 	- include a dedicated unit known as the Opacity Micromap Engine. [3]
 	- includes a Triangle Cluster Intersection Engine, which further accelerates ray tracing of Mega Geometry. [3]
 	- adds Linear Swept Spheres as a hardware-accelerated path to ray trace fine geometry like hair. [3]
+
+* added floating point instructions to uniform datapath. [4]
+	- include adds, multiples, FMAs, min/max, and conversions between integer and floating point.
 
 
 ## Specs

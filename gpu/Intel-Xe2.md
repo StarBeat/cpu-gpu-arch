@@ -1,6 +1,7 @@
 
 # Arc Battlemage (B-Series)
 
+Generation: 13<br/>
 Architecture: Xe2-HPG (high performance graphics)<br/>
 
 ## Examples
@@ -39,4 +40,24 @@ Architecture: Xe2-HPG (high performance graphics)<br/>
 	- 128 fp32 FLOPS/cy
 
 * L1 bandwidth: 512B/cy (specs), ~256B/cy (bench) [1.3]
+
+
+# Intel Xe2-LPG
+
+Generation: 13<br/>
+CPU code name: Lunar Lake<br/>
+Architecture: Xe2-LPG (low power graphics)
+
+## Examples
+
+* iGPU in Core Ultra 200V
+* Arc 140V
+
+## References
+
+2.1. [Intel Unveils Lunar Lake Architecture: New P and E cores, Xe2-LPG Graphics, New NPU 4 Brings More AI Performance](https://www.anandtech.com/show/21425/intel-lunar-lake-architecture-deep-dive-lion-cove-xe2-and-npu4/6)<br/>
+2.2. [Lunar Lake’s iGPU: Debut of Intel’s Xe2 Architecture](https://chipsandcheese.com/p/lunar-lakes-igpu-debut-of-intels)<br/>
+2.3. [Vulkan features for Arc 130V](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20130V%20GPU%20(16GB))<br/>
+
+## Notes
 

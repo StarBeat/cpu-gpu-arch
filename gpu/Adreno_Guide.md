@@ -94,4 +94,5 @@ Bad. The one (1) prim/clock will turn into 50 cycles if you must clip the primit
 * Which is better: vertex stream or attribute fetching in VS? [2]<br/>
 Vertex stream is preferred. Adreno GPUs have specialized hardware for fetch and decode of these.
 
+* FP16 inverse squareroot is 2x faster than FP32.
 

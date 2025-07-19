@@ -58,6 +58,7 @@ With RTX:
 	- TODO [7]
 	- Scheduler operate on threads instead of warps. So when things diverged, the scheduler serialised the divergent components. Do divergent block `A` till completion, then `B`. [?]
 	- Each L0 instruction cache is private to one scheduler/processing block. [4]
+	- `subgroupElect()` has different behavior than on all other GPUs - it executes once per active thread instead of once per subgroup. [10]
 
 * Instruction Scheduling: [1]
 	- Each Turing SM includes 4 warp-scheduler units. Each scheduler handles a static set of warps and issues to a dedicated set of arithmetic instruction units. Instructions are performed over two cycles, and the schedulers can issue independent instructions every cycle. Dependent instruction issue latency for core FMA math operations is four clock cycles, like Volta, compared to six cycles on Pascal. As a result, execution latencies of core math operations can be hidden by as few as 4 warps per SM, assuming 4-way instruction-level parallelism ILP per warp, or by 16 warps per SM without any instuction-level parallelism.
