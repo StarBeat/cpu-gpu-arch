@@ -102,4 +102,9 @@
 	- Texture Rate: 51.20 GTexel/s
 	- GPU to CPU, copy engine: 43.8 GB/s, compute shader: 34.8 GB/s [2]
 	- CPU to GPU, copy engine: 43.7 GB/s, compute shader: 34.6 GB/s [2]
+	
+* Tensor core ops per CU: [[ref](https://gpuopen.com/learn/wmma_on_rdna3/)]
+	- fp16: 256
+	- i8: 512
+	- i4: 1024
 

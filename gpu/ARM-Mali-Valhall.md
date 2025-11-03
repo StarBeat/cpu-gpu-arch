@@ -155,6 +155,9 @@ Content:
 * Valhall maintains native support for int8, int16, and fp16 data types. These data types can be packed using SIMD instructions to fill each 32-bit data processing lane. This arrangement maintains the power efficiency and performance that is provided by the types that are narrower than 32-bits. [4.2]
 * A single 16-wide warp maths unit can therefore perform 32x fp16/int16 operations per clock cycle, or 64x int8 operations per clock cycle. [4.2]
 * Fragment shading rate (VRS)
+* Cooperative matrix support on Google Tensor. [4.3]
+
+## Specs
 
 * LSU: [4.2]
 	- 64-byte cache line.

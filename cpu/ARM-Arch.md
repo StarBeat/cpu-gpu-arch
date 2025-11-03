@@ -22,6 +22,45 @@ Content:
 
 ## Notes
 
+* A53: [llm]
+	- fp32 FLOPS/cy:  8 (1 × 128-bit FMA pipe)
+	- i32 OPS/cy:     4 (1 × 128-bit INT pipe)
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  16 B/clk (1 × 128-bit ld/st pipe)
+	- L2 latency:   ~15 cycles
+	- L2 bandwidth:  16 B/clk
+	- Vector formats (NEON): fp32, fp16-convert, int8/16/32
+	- in-order, 2-wide
+
+* A57: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA pipes)
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  32 B/clk
+	- L2 latency:   ~12 cycles
+	- L2 bandwidth:  32 B/clk
+	- Vector formats: fp32, fp16-convert, int8/16/32
+	- 3-wide out-of-order
+
+* A72: [llm]
+	- fp32 FLOPS/cy: 16
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  32 B/clk
+	- L2 latency:   ~11 cycles
+	- L2 bandwidth:  32 B/clk
+	- Vector formats: fp32, fp16-convert, int8/16/32
+	- 3-wide out-of-order
+
+* A73: [llm]
+	- fp32 FLOPS/cy:  8 (1 × 128-bit FMA)
+	- i32 OPS/cy:     4
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  16 B/clk
+	- L2 latency:   ~13 cycles
+	- L2 bandwidth:  16 B/clk
+	- Vector formats: fp32, fp16-convert, int8/16/32
+	- 2-wide out-of-order
 
 
 # ARMv8.2-A
@@ -36,20 +75,63 @@ Content:
 2.1. [Exploring DynamIQ and ARM’s New CPUs: Cortex-A75, Cortex-A55](https://www.anandtech.com/show/11441/dynamiq-and-arms-new-cpus-cortex-a75-a55)<br/>
 2.2. [Arm's New Cortex-A77 CPU Micro-architecture](https://www.anandtech.com/show/14384/arm-announces-cortexa77-cpu-ip)<br/>
 2.3. [Arm's New Cortex-A78 and Cortex-X1 Microarchitectures](https://www.anandtech.com/show/15813/arm-cortex-a78-cortex-x1-cpu-ip-diverging)<br/>
-2.4. [Arm Cortex-A78 Core Software Optimization Guide](https://developer.arm.com/documentation/102160/latest/)<br/>
-2.5. [Arm Cortex-X1 Core Software Optimization Guide](https://documentation-service.arm.com/static/5f15a74720b7cf4bc5247c06)<br/>
+2.4. [Arm Cortex-A78 Core Software Optimization Guide](https://developer.arm.com/documentation/102160/latest/), [[backup](../pdf/Arm-Cortex-A78_Core_Software_Optimization_Guide.pdf)]<br/>
+2.5. [Arm Cortex-X1 Core Software Optimization Guide](https://documentation-service.arm.com/static/5f15a74720b7cf4bc5247c06), [[backup](../pdf/Arm-Cortex-X1_Core_Software_Optimization_Guide.pdf)]<br/>
 2.6. [Deep Diving Neoverse N1](https://chipsandcheese.com/2021/10/22/deep-diving-neoverse-n1/)<br/>
 2.7. [Arm Cortex-X1: The First From The Cortex-X Custom Program](https://fuse.wikichip.org/news/3543/arm-cortex-x1-the-first-from-the-cortex-x-custom-program/)<br/>
 2.8. [Arm Unveils the Cortex-A78: When Less Is More](https://fuse.wikichip.org/news/3536/arm-unveils-the-cortex-a78-when-less-is-more/)<br/>
 2.9. [Arm Unveils Cortex-A77, Emphasizes Single-Thread Performance](https://fuse.wikichip.org/news/2339/arm-unveils-cortex-a77-emphasizes-single-thread-performance/)<br/>
+2.10. [Arm Cortex-A55 Software Optimization Guide](TODO), [[backup](../pdf/arm-cortex_a55_software_optimization_guide_v3.pdf)]<br/>
+2.11. [Arm Cortex-A76 Software Optimization Guide](TODO), [[backup](../pdf/arm-cortex_a76_software_optimization_guide.pdf)]<br/>
 
 ## Notes
 
 * Optional FP16, BF16 support
 * NEON: [2.3]
-	- X1: 4x128b NEON bandwidth
-	- A78: 2x128b NEON bandwidth
+	- X1:  4x128b NEON bandwidth, 32 fp32 FLOPS/cy, 16 i32 ADDs/cy, 32 i32 MLA ops/cy
+	- A78: 2x128b NEON bandwidth, 16 fp32 FLOPS/cy,  8 i32 ADDs/cy, 16 i32 MLA ops/cy
+	- A55: 1x128b NEON bandwidth,  8 fp32 FLOPS/cy,  4 i32 ADDs/cy,  8 i32 MLA ops/cy
 	- Arm's current ISA doesn't allow for individual vectors to be larger than 128b
+	- Can issue one ADD or MUL per lane.
+
+* A55: [llm]
+	- fp32 FLOPS/cy: 8 (1 × 128-bit FMA pipe)
+	- i32 OPS/cy:    4 (1 × 128-bit INT SIMD pipe)
+	- L1 latency:    3 cycles (load‐to-use)
+	- L1 bandwidth: 32 B/cy (2 × 64-bit ld + 1 × 64-bit st, or 1 × 128-bit ld/st)
+	- L2 latency:   12–13 cycles
+	- L2 bandwidth: 32 B/cy
+	- Vector formats: fp32, fp16, int8/16/32, dot-product (int8, fp16)
+	- in-order, 2-wide
+
+* A75: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA)
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy (2 × 128-bit ld + 2 × 128-bit st)
+	- L2 latency:   ~10 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, int8/16/32, dot-product
+
+* A78: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA pipes)
+	- i32 OPS/cy:     8 (2 × 128-bit INT SIMD pipes)
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy (2 × 128-bit load + 2 × 128-bit store ports)
+	- L2 latency:   ~11 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product
+	- 4-wide out-of-order
+
+* X1: [llm]
+	- fp32 FLOPS/cy: 24 (3 × 128-bit FMA pipes) *(?)*
+	- i32 OPS/cy:    12 (3 × 128-bit INT SIMD pipes)
+	- L1 latency:     4 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:    12–13 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product
+	- 5-wide out-of-order
 
 # ARMv9.0-A
 
@@ -79,13 +161,51 @@ Content:
 
 * X3:
 	- 11 cycle mispredict penalty
+	- reorder buffer: 320x2
 	
 * A715:
 	- 12 cycle mispredict penalty
 	- 10 cycle latency to access L2
 	
-* A520:
-	- 3x ALU pipelines
+* A510: [llm]
+	- 3x ALU pipelines [4.11]
+	- fp32 FLOPS/cy: 8 (1 × 128-bit FMA, SVE2/NEON)
+	- i32 OPS/cy:    4
+	- L1 latency:    3 cycles
+	- L1 bandwidth:  32 B/cy
+	- L2 latency:   ~12 cycles
+	- L2 bandwidth:  32 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product, predication
+
+* A710: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA)
+	- i32 OPS/cy:    8
+	- L1 latency:    3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:   ~10 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product
+
+* X2: [llm]
+	- fp32 FLOPS/cy: 24 (3 × 128-bit FMA) *(? must be 4)*
+	- i32 OPS/cy:    12
+	- L1 latency:     4 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:    11–12 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product
+
+* X3: [llm]
+	- fp32 FLOPS/cy: 24 (3 × 128-bit FMA) *(?)*
+	- i32 OPS/cy:    12
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:    10–11 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product, fp8 (if SME2 present)
+
+* ISA:
+	- SVE2
 
 
 # ARMv9.2-A
@@ -96,7 +216,6 @@ Content:
 
 ## References
 
-4.1. [Arm Unveils 2023 Mobile CPU Core Designs: Cortex-X4, A720, and A520](https://www.anandtech.com/show/18871/arm-unveils-armv92-mobile-architecture-cortex-x4-a720-and-a520-64bit-exclusive)<br/>
 4.2. [Arm Cortex-A520 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC-1505342170-671342/latest)<br/>
 4.3. [Arm Cortex-X4 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC1505342170538636/latest/)<br/>
 4.4. [Arm Cortex-X4 Core Technical Reference Manual](https://developer.arm.com/documentation/102484/0002/The-Cortex-X4--core)<br/>
@@ -106,46 +225,104 @@ Content:
 4.8. [Arm Introduces A New Big Core, The Cortex-A720](https://fuse.wikichip.org/news/7529/arm-introduces-a-new-big-core-the-cortex-a720/)<br/>
 4.9. [Arm Introduces The Cortex-X4, Its Newest Flagship Performance Core](https://fuse.wikichip.org/news/7531/arm-introduces-the-cortex-x4-its-newest-flagship-performance-core/)<br/>
 4.10. [Arm Launches Next-Gen Efficiency Core; Cortex-A520](https://fuse.wikichip.org/news/7527/arm-launches-next-gen-efficiency-core-cortex-a520/)<br/>
-
-
-# Taishan
-
-## Examples
-
-* TaishanV110, TaishanV120, TaishanV123
-
-## References
-
-5.1. [Huawei Expands Kunpeng Server CPUs, Plans SMT, SVE For Next Gen](https://fuse.wikichip.org/news/2274/huawei-expands-kunpeng-server-cpus-plans-smt-sve-for-next-gen/)
+4.11. [Arm's Total Compute Solution For 2023](https://hothardware.com/reviews/arm-tcs-2023-cortex-x4-immortalis-g720)
 
 ## Notes
 
-* TaishanV110:
-	- Each core is a 4-way out-of-order superscalar that implements the ARMv8.2-A ISA. [5.1]
-	- compared to Arm’s Cortex cores, Taishan core features an improved memory subsystem, a larger number of execution units, and a better branch predictor. [5.1]
-	
-
-# All
-
-## References
-
-
-## Notes
+* X4/X925: same 4x128b NEON bandwidth, 16 fp32 FLOPS/cy, 16 i32 ADDs/cy
+* Cache size:
+	- X925: up to 3MB L2 cache
+	- X4: up to 2MB L2 cache
 
 * Optional support for fp8 (E5M2, E4M3).
+* SVE2.
 
-* X4: [4.1]
+* X4: [4.11]
 	- 10 cycle mispredict penalty
 	- branch mispredict penalty is down from 11 cycles to 10.
 	- increased the number of ALUs from 6 to 8.
+	- reorder buffer: 384x2
 
-* A720: [4.1]
+* A720: [4.11]
 	- 11 cycle mispredict penalty
 	- Pipelined FDIV/FSQRT - concurrent executions of both FDI and FSQRT can improve instruction throughput.
 	- 9 cycle latency to access L2
 	- 2x memset bandwidth in L2
 
-* A520: [4.1]
+* A520: [4.11]
 	- can be merged in pairs to share pipelines and improve efficiency.
 	- allow to share single SVE between two cores.
 	- removed third ALU
+
+* A520: [llm]
+	- fp32 FLOPS/cy:  8
+	- i32 OPS/cy:     4
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  32 B/cy
+	- L2 latency:   ~11 cycles
+	- L2 bandwidth:  32 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product
+
+* A720: [llm]
+	- fp32 FLOPS/cy: 16
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:   ~10 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product, fp8 (SME2)
+
+* A725: [llm]
+	- fp32 FLOPS/cy: 16
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:   ~10 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product, fp8 (SME2)
+
+* X4: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA)
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:    10–11 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, fp8 (SME2), dot-product
+
+* X925: [llm]
+	- fp32 FLOPS/cy: 16 (2 × 128-bit FMA)
+	- i32 OPS/cy:     8
+	- L1 latency:     3 cycles
+	- L1 bandwidth:  64 B/cy
+	- L2 latency:    10–11 cycles
+	- L2 bandwidth:  64 B/cy
+	- Vector formats: fp32, fp16, bf16, int8/16/32, dot-product, SVE2 predicates
+
+
+# ARMv9.3-A
+
+## Examples
+
+**Lumex**
+* C1-Ultra, C1-Premium, C1-Nano
+
+## References
+
+## Notes
+
+* SME2 - Scalable Matrix Extension
+
+
+# ARMv9.4-A
+
+## Examples
+
+* Cortex A730, X930
+
+
+
+# All
+
+## References
+

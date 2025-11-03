@@ -1,11 +1,13 @@
 
 ## Examples
 
+* 730, 740
 * 741, X (X Elite)
 
+**SoC/Device**
 * Meta Quest 3, Pico 4 Ultra (Adreno 740)
-* Snapdragon XR2 Gen 2 (with Adreno 740)
-
+* Snapdragon XR2 Gen 2 (Adreno 740)
+* Snapdragon 8 Gen 3 (Adreno 750)
 
 ## References
 
@@ -18,6 +20,11 @@
 7. [Correction on Qualcomm iGPUs](https://chipsandcheese.com/2024/05/06/correction-on-qualcomm-igpus/)
 
 
+## Features
+
+* Hardware ray tracing. [6]
+* Sparse memory. [6]
+
 ## Notes
 
 * Adreno 7xx tries to speed up this work *(sequential binning and per tile rasterization)* by introducing concurrency in the command processor. Adreno 6xx’s SQE gets split into two microcontrollers, called BV and BR. BV handles the binning pass, and BR renders the tiles. [8]
@@ -28,3 +35,13 @@
 
 * Cluster cache (between L1 and L2)
 	- 128KB for each cluster of 2x SP or 4x uSPTP.
+
+
+## Specs
+
+* XR2 Gen2:
+	- GPU Heavy: 600MHz GPU, 1.6GHz CPU
+	- CPU heavy: 490MHz GPU, 2.0GHz CPU
+	- Adreno 740 with 1536 threads, 3.1 TFLOPS
+	- 4x Cortex A78C 2.36GHz, 2x Cortex A78C 2.05GHz
+	- LPDDR5X quad-channel (64bit)

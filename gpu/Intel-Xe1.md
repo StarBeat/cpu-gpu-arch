@@ -2,7 +2,6 @@
 # Arc Alchemist
 
 Generation: 12.7<br/>
-CPU code name: Meteor Lake.<br/>
 Architecture: Xe-HPG (high performance graphics)<br/>
 
 ## Examples
@@ -34,11 +33,15 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 * Async compute queue.
 * Async transfer queue.
 * Sampler feedback.
+* Cooperative matrix.
+* Removed ASTC format.
 
 ## Notes
 
 * Parallel FP32 FMA and I32 IADD datapath. [1.4]
 * Each Xe Core has eight TMUs, or texture samplers in Intel terminology. The samplers have a 32 KB texture cache, and can return 128 bytes/cycle to the XVEs. [1.4]
+
+* In Xe1 and prior Intel GPUs, a thread would be allocated 128 registers regardless of if that thread needed all 128 registers or not. [[ref](https://chipsandcheese.com/p/panther-lakes-reveal-at-itt-2025)]
 
 ## Specs
 
@@ -50,10 +53,10 @@ Architecture: Xe-HPG (high performance graphics)<br/>
 	- 1/3x i8 add, mul
 
 	
-# Intel Xe-LPG
+# Intel Xe-LP
 
 CPU code name: Tiger Lake, Rocket Lake, Alder Lake, Raptor Lake, Twin Lake.<br/>
-Architecture: Xe-LPG (low power graphics)
+Architecture: Xe-LP (low power)
 
 ## Examples
 
@@ -65,6 +68,7 @@ Architecture: Xe-LPG (low power graphics)
 2.2. [Intel Processor Graphics Xᵉ-LP API Developer and Optimization Guide](https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html), [[webarchive](https://web.archive.org/web/20230623012301/https://www.intel.com/content/www/us/en/developer/articles/guide/lp-api-developer-optimization-guide.html)]<br/>
 2.3. [Vulkan features for Iris Xe](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Iris(R)%20Xe%20Graphics), [UHD Graphics 770](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20UHD%20Graphics%20770), [RaptorLake-S](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20RaptorLake-S%20Mobile%20Graphics%20Controller), [N150 (UHD Graphics 730)](https://vulkan.gpuinfo.org/displayreport.php?id=39319)<br/>
 2.4. [Intel’s Ambitious Meteor Lake iGPU](https://chipsandcheese.com/p/intels-ambitious-meteor-lake-igpu)<br/>
+2.5. [Intel Meteor Lake Technical Deep Dive](https://www.techpowerup.com/review/intel-meteor-lake-technical-deep-dive/)<br/>
 
 ## Features
 
@@ -72,7 +76,7 @@ Architecture: Xe-LPG (low power graphics)
 * Vulkan video decode.
 * Fragment shader interlock.
 * Sampler feedback.
-* XeSS Supper resolution.
+* ASTC format still supported.
 
 ## Notes
 
@@ -91,28 +95,30 @@ Architecture: Xe-LPG (low power graphics)
 	- 16x 256 bit Vector engines
 
 
-# Intel Xe+ LPG
+# Intel Xe-LPG
 
 CPU code name: Arrow Lake, Meteor Lake.<br/>
-Architecture: Xe+ LPG (low power graphics)
+Architecture: Xe-LPG / Xe-LPG+ (low power graphics)
 
 ## Examples
 
-* iGPU in Core Ultra 100
-* iGPU in Core Ultra 200 except 200V
+* iGPU in Core Ultra 100 (Meteor Lake)
+* iGPU in Core Ultra 200 (Arrow Lake) except 200V (Lunar Lake)
 * Arc 130T, 140T
  
 ## References
 
-3.1. [Vulkan features for Arc 140T](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20140T%20GPU%20(32GB))<br/>
+3.1. [Vulkan features for Arc 140T 32GB](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20140T%20GPU%20(32GB)), [16GB](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20Arc(TM)%20140T%20GPU%20(16GB))<br/>
 
 ## Features
 
-* Arrow Lake-H: XeSS super resolution, frame generation, low latency
-* Arrow Lake-S, Meteor Lake: XeSS super resolution, low latency
+* Arrow Lake-H with Xe-LPG+: XeSS super resolution, frame generation, low latency
+* Arrow Lake-S, Meteor Lake with Xe-LPG: XeSS super resolution, low latency
 
 ## Notes
 
+* iGPU supports up to 32GB memory. 
 * Same features as in Xe-HPG
-* XMX engine
+* XMX engine (only Xe-LPG+ / Arrow Lake-H ?)
 
+* LPG+ gets support for DPAS (dot product accumulate systolic). DPAS enables FP16, BF16, and INT4 multiplication with 16 or 32 bits accumulate. [[ref](https://www.techpowerup.com/319499/intels-desktop-and-mobile-arrow-lake-chips-feature-different-versions-of-xe-lpg)]

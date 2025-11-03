@@ -62,7 +62,7 @@
 	- cold/unlikely path is placed under the hot path.
 	- compiler may ignore `[[unlikely]]` if code in cold path is too small, but it cause performance penalty on high-loaded code.
 
-* Programs can use the _mm_prefetch intrinsic on any pointer in the program. [1.1]
+* Programs can use the `_mm_prefetch` intrinsic on any pointer in the program. [1.1]
 	- Most processors (certainly all x86 and x86-64 processors) ignore errors resulting from invalid pointers which makes the life of the programmer significantly easier.
 	-  If the passed pointer references valid memory, the prefetch unit will be instructed to load the data into cache and, if necessary, evict other data.
 

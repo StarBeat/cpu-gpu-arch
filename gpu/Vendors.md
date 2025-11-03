@@ -26,9 +26,7 @@ Content:
 * [GCN 5 (Vega)](AMD-GCN5.md)
 
 **CDNA**
-* [CDNA 1](AMD-CDNA1.md)
-* [CDNA 2](AMD-CDNA2.md)
-* [CDNA 3](AMD-CDNA3.md)
+* [CDNA 1,2,3,4](AMD-CDNA.md)
 
 **RDNA**
 * [RDNA 1 (Navi)](AMD-RDNA1.md)

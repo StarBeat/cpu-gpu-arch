@@ -202,5 +202,10 @@ With RTX:
 	- 16 type conversions
 	- 512 fp16 FMA on tensor core
 
+* ops/clock per Tensor core: [3]
+	- 64 fp16 FMA or 128 FLOPS
+	- 256 i8
+	- 512 i4
+
 * Render target compression:
 	- block size: 4x4 pix [10]

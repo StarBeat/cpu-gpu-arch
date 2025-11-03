@@ -40,8 +40,7 @@ Content:
 
 ## HiSilicon
 
-TODO:
-TaiShan V120
+* [TaiShan V1xx](HiSilicon-Arch.md)
 
 ## MCST
 

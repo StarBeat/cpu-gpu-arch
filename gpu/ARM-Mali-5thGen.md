@@ -18,12 +18,12 @@ Content:
 
 1.1. [Arm Mali-G620 Performance Counters Reference Guide](https://developer.arm.com/documentation/108080/0104)<br/>
 1.2. [Arm Immortalis-G720 and Arm Mali-G720 Performance Counters Reference Guide](https://developer.arm.com/documentation/108081/0104), [[backup](../pdf/arm-immortalis-g720_and_arm_mali-g720_performance_counters_reference_guide_108081_0103_en.pdf)]<br/>
-1.3. [Vulkan features for Mali-G720](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G720-Immortalis%20MC12)<br/>
+1.3. [Vulkan features for Mali-G720 MC12](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G720-Immortalis%20MC12), [Mali-G720 MC7](https://vulkan.gpuinfo.org/listreports.php?devicename=Mali-G720%20MC7)<br/>
 
 ## Features
 
 * Deferred Vertex Shading - optimization for small triangles.
-
+* Cooperative matrix support (with 49.1.0 driver).
 
 ## Notes
 
