@@ -7,7 +7,7 @@
 
 ## Examples
 
-* Phenom  
+* Phenom
 * Phenom II
 * Athlon X2
 * Athlon II
@@ -118,7 +118,7 @@
 	- float register file: 160 entry. [3]
 	- The PRF has 8 read ports and 4 write ports for ALU results, each 256 bits wide and two additional write ports supporting up to two 256-bit load operations per cycle. [3]
 	- The latency of fused multiply-add (FMA) instructions remains 5 cycles. [3]
-	
+
 * Integer unit: [3]
 	- register file: 180
 	- reorder buffer: 224
@@ -126,7 +126,7 @@
 
 * Cache:
 	- L1I: 32KB, 4-way, 64B line, 32B/cy from L2. [3]
-		* Shared by the two threads, per core [3] 
+		* Shared by the two threads, per core [3]
 	- L1D: 32KB, 8-way. [3]
 		* 4-5 cycles latency for Int [3]
 		* 7-8 cycles latency for FP [3]
@@ -197,7 +197,7 @@
 
 * Cache: [1]
 	- Increased L3 latency (~46 cycles).
-	
+
 * LSU: [1]
 	- Load throughput increased from 2 to 3, if not 256b.
 	- Store throughput increased from 1 to 2, if not 256b.
@@ -213,10 +213,10 @@
 	- cores: 6
 	- | cache | read | write | copy | latency | cycles |
 	  |---|---|---|---|---|---|
-	  | L1 | 1'726 | 869 | 1'404 | 0.9  |  |
-	  | L2 | 871   | 745 | 855   | 2.6  |  |
-	  | L3 | 354   | 395 | 319   | 11.4 |  |
-	
+	  | L1 | 1'726 | 869 | 1'404 | 0.9  | 4 |
+	  | L2 | 871   | 745 | 855   | 2.6  | 12 |
+	  | L3 | 354   | 395 | 319   | 11.4 | 53 |
+
 </details>
 
 
@@ -275,7 +275,12 @@
 
 * Cache: [4]
 	- L1 Instruction: 32 KB per core, 8-way, 64 B/cy
-	- L1 Data: 32 KB per core, 8-way, read: 64 B/cy, write: 32 B/cy
+	- L1 Data:
+		* 32 KB per core
+		* 8-way set associative
+		* read: 64 B/cy, write: 32 B/cy
+		* int latency: 4-5cy
+		* fp latency: 7-8cy
 	- L2: 1 MB per core, 8-way, 32 B/cy, latency: 14cy
 	- L3 desktop: 32 MB per CCD, 16-way, read: 32 B/cy, write: 16 B/cy, latency 50cy
 	- L3 with 3D V-Cache: 96 MB per CCD
@@ -292,6 +297,8 @@
 * FPU:
 	- Some ALU operations on vector registers increased throughput from 2 to 3 ops/cycle. [4]
 	- Some ALU operations on vector registers (VPABSx,VPHADDx,VPHSUBx,VPSLLx,VPSRLx,VPSRAx,VPACKx,VPSIGNx,VMAXx,VMINx) increased latency by 1 cycle. [4]
+* LSU:
+	- Three largely independent pipelines can execute up to two 256-bit load operations and one 256-bit store per cycle. [4]
 
 * `vaddps` instruction takes ports 2 and 3, and the `vfmadd132ps` instruction takes ports 0 and 1. [12]
 
@@ -327,7 +334,7 @@
 	  | L1 | 4'783 | 2'520 | 4'917 | 0.8  | 4  |
 	  | L2 | 2'483 | 2'360 | 2'392 | 3.1  | 16 |
 	  | L3 | 1'480 | 1'477 | 1'321 | 11.8 | 60 |
-	
+
 * Ryzen 7 8840HS:
 	- clock: 4.78 Ghz
 	- cores: 8
@@ -346,7 +353,7 @@
 * L3 cache: 16MB per CCD instead of 32MB. [4]
 * none of the Zen 4c chips clock higher than 3.1GHz. [9]
 	- Zen 4 and Zen 4c are not identical CPU cores.
-	- Zen 4c is for all practical purposes AMD’s efficiency core, and it needs to be treated as such. 
+	- Zen 4c is for all practical purposes AMD’s efficiency core, and it needs to be treated as such.
 	- Phoenix 2 probably is more efficient – and thus higher scoring – in heavily multithreaded scenarios.
 
 
@@ -436,7 +443,7 @@
 	  | L1 | 2'260 | 2'260 | 4'100 | 0.8  | 4  |
 	  | L2 | 1'740 | 1'340 | 1'760 | 2.7  | 12 |
 	  | L3 | 570   | 620   | 500   | 10.7 | 51 |
-	  
+
 * Ryzen AI 7 350:
 	- clock: 5.07 GHz
 	- cores: 4P + 4E
@@ -445,15 +452,15 @@
 	  | L1 | 1'730 | 1'740 | 3'440 | 0.8  | 4  |
 	  | L2 | 1'300 | 1'320 | 1'330 | 2.8  | 14 |
 	  | L3 | 940   | 860   | 920   | 11.0 | 56 |
-	  
+
 * Ryzen AI 9 MAX 395+:
 	- clock: 5.15 GHz
 	- cores: 16
 	- | cache | read | write | copy | latency | cycles |
 	  |---|---|---|---|---|---|
 	  | L1 | 8'540 | 4'580 | 8'440 | 0.8  | 4 |
-	  | L2 | 3'350 | 2'190 | 2'970 | 2.7  |  |
-	  | L3 | 1'270 | 1'140 | 1'380 | 10.6 |  |
+	  | L2 | 3'350 | 2'190 | 2'970 | 2.7  | 14 |
+	  | L3 | 1'270 | 1'140 | 1'380 | 10.6 | 54 |
 
 </details>
 

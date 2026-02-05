@@ -24,6 +24,7 @@ Content:
 
 * Deferred Vertex Shading - optimization for small triangles.
 * Cooperative matrix support (with 49.1.0 driver).
+* ray query.
 
 ## Notes
 
@@ -61,7 +62,8 @@ Content:
 ## Features
 
 * Fragment Pre-pass - hardware depth pre-pass.
-* VK_ARM_pipeline_opacity_micromap
+* VK_ARM_pipeline_opacity_micromap.
+* Cooperative matrix.
 
 ## Notes
 
@@ -82,13 +84,41 @@ Content:
 	- texelRate: 8 -- maximum number of texels per clock per shader core.
 
 
+# Gen 3 (Lumex)
+
+## Examples
+
+* Mali G1-Ultra
+
+**SoC**
+* MediaTek Dimensity 9500
+* Samsung Exynos 2600
+
+## References
+
+3.1. [Overview](https://www.arm.com/products/silicon-ip-multimedia/gpu/mali-g1-premium)
+3.2. [Arm Mali G1 Performance Counters Reference Guide](https://developer.arm.com/documentation/111042/0100/?lang=en), [[backup](../pdf/arm-mali_g1_performance_counters_reference_guide_111042_0100_en.pdf)]
+
+## Features
+
+* Image Region Dependencies
+* tile-based hardware counters.
+* BVH traversal in HW.
+* Cooperative matrix (?)
+
+## Notes
+
+* Image Region Dependencies (IRD)
+	- a smarter scheduling feature that enables the GPU to process different parts of the screen simultaneously.
+
+
 # All gens
 
 ## References
 
 1. Deferred Vertex Shading: [slide 1](../img/arm-dvs-1.jpg), [slide 2](../img/arm-dvs-2.jpg)
-2. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/0700/), [[backup](../pdf/Arm-GPU_datasheet_v7.pdf)]
-3. [Vulkanised 2025: Vulkan Best Practices for Mobile Development ](https://youtu.be/fWeR4ECVcW8) 
+2. [Arm GPU Datasheet](https://developer.arm.com/documentation/102849/latest/), [[backup](../pdf/Arm-GPU_datasheet_v8.pdf)]
+3. [Vulkanised 2025: Vulkan Best Practices for Mobile Development ](https://youtu.be/fWeR4ECVcW8)
 
 
 ## Notes

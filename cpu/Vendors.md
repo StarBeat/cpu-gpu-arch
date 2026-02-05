@@ -27,6 +27,7 @@ Content:
 ## Intel
 
 * [CPU Architectures](Intel-Arch.md)
+* [Server CPU Architectures](Intel-Server-Arch.md)
 * [Best practices, Optimization guide](Intel-Guide.md)
 
 ## Qualcomm

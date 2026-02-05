@@ -16,4 +16,4 @@
 * TaishanV110:
 	- Each core is a 4-way out-of-order superscalar that implements the ARMv8.2-A ISA. [1.1]
 	- compared to Arm’s Cortex cores, Taishan core features an improved memory subsystem, a larger number of execution units, and a better branch predictor. [1.1]
-	
+

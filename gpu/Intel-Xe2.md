@@ -13,7 +13,7 @@ Architecture: Xe2-HPG (high performance graphics)<br/>
 1.1. [Vulkan features for Arc B580](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel%28R%29+Arc%28TM%29+B580+Graphics)<br/>
 1.2. [Intel Arc B570 Graphics Performance On Linux](https://www.phoronix.com/review/intel-arc-b570-linux)<br/>
 1.3. [Intel’s Battlemage Architecture](https://chipsandcheese.com/p/intels-battlemage-architecture)<br/>
-1.4. [Vulkan features for Arc B580](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel%28R%29+Arc%28TM%29+B580+Graphics)<br/>
+1.4. [Vulkan features for Arc B580](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel%28R%29+Arc%28TM%29+B580+Graphics), [B580 (Mesa)](https://vulkan.gpuinfo.org/listreports.php?property=devicename&value=Intel(R)%20Arc(tm)%20B580%20Graphics%20(BMG%20G21)&platform=linux)<br/>
 1.5. [Xe2 and Lunar Lake GPU Deep Dive](https://cdrdv2-public.intel.com/824434/2024_Intel_Tech%2520Tour%2520TW_Xe2%2520and%2520Lunar%2520Lakes%2520GPU.pdf)<br/>
 
 ## Notes

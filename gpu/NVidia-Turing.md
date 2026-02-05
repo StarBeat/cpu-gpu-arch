@@ -79,7 +79,9 @@ With RTX:
 * Uniform Data Path. This design is intended to accelerate numerical, array-based, computebound workloads that occupy the main datapaths almost completely with floating-point instructions, typically FFMA or HMMA, but also contain a few integer operations, typically updating array indices, loop indices or pointers; or performing array or loop boundary checks. These few integer instructions spoil the instruction mix, and prevent the main datapaths from ingesting a 100% pure stream of FFMA or HMMA. In these circumstances, even a small fraction of integer instructions can hurt the overall arithmetic throughput, lowering it significantly from its theoretical maximum. [4]
 
 * fp16 performance: HADD2, HMUL2, HFMA2 has same performance, MAD has 2 instructions, so HFMA2 should be used instead. [10]
-* SM bound to one or multiple render target regions with tile size 16x16 (or lower on high register usage) [10]
+* Tile size is fixed to 16x16 pixels: [10]
+	- On low register count and when fragment count equal to pixel count only one SM is used per tile.
+	- If fragment count or register count increases then multiple SM us used (work stealing?).
 * Minimal workgroup size 32x2, because FMA perform over 2 cycles (like a SIMD16 with dual issue). [10]
 
 * Each Tensor Core can perform up to 64 floating point fused multiply-add (FMA) operations per clock using FP16 inputs. [2]

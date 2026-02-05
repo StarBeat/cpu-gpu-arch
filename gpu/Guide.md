@@ -23,6 +23,10 @@ Content:
 2.1. [Modern Mobile Rendering at HypeHype (2023)](https://enginearchitecture.realtimerendering.com/downloads/reac2023_modern_mobile_rendering_at_hypehype.pdf)<br/>
 2.2. [Mobile Rendering Architecture](https://advances.realtimerendering.com/s2023/AaltonenHypeHypeAdvances2023.pdf)<br/>
 
+TODO:
+* https://developer.samsung.com/galaxy-gamedev/best-practice.html
+* https://developer.samsung.com/galaxy-gamedev/resources/articles/usage.html
+
 ## Notes
 
 * Min spec 2023: 95% of our users have Vulkan 1.0 + Android 9, 2GB memory (1.4GB usable). [2.1]<br/>

@@ -64,4 +64,23 @@ Notes:
 Calculate bandwidth:
 ```
 transfer_rate (MT/s) * bit_width * channel_count / 8 = bandwidth (MB/s)
+transfer_rate (MT/s) * memory_bus / 8 = bandwidth (MB/s)
+channel_count = memory_bus / bit_width
 ```
+
+
+## USB speed
+
+| name                | speed (Gbit/s) | latency |
+|---------------------|----------------|---------|
+| USB 2.0             | 0.48           | yes     |
+| USB 3.0             | 5              | yes     |
+| USB 3.1             | 10             | yes     |
+| USB 3.2             | 20             | yes     |
+| USB 4               | 40             | yes     |
+| USB 4 2.0           | 80             | yes     |
+| Thunderbolt 2       | 20             | yes     |
+| Thunderbolt 3       | 40             | yes     |
+| Thunderbolt 4       | 32-40          | yes     |
+| Thunderbolt 5       | 32-120         | yes     |
+| OCuLink PCIe 4.0 x4 | 64             | no      |

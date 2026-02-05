@@ -9,7 +9,7 @@ CPU code name: Ice Lake.
 ## References
 
 1. [Developer and Optimization Guide for Intel Processor Graphics Gen11 API](https://www.intel.com/content/www/us/en/developer/articles/guide/developer-and-optimization-guide-for-intel-processor-graphics-gen11-api.html), [[webarchive](https://web.archive.org/web/20230319150934/https://www.intel.com/content/www/us/en/developer/articles/guide/developer-and-optimization-guide-for-intel-processor-graphics-gen11-api.html)]
-2. [Vulkan features for UHD Graphics](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20HD%20Graphics%20Gen11)
+2. [Vulkan features for UHD Graphics](https://vulkan.gpuinfo.org/listreports.php?devicename=Intel(R)%20HD%20Graphics%20Gen11), [Iris+ (Mesa driver)](https://vulkan.gpuinfo.org/listreports.php?property=devicename&value=Intel(R)%20Iris(R)%20Plus%20Graphics%20(ICL%20GT2)&platform=linux)
 3. [Intel Processor Graphics Gen11 Architecture](https://software.intel.com/content/dam/develop/external/us/en/documents/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf), [[backup](../pdf/Intel-the-architecture-of-intel-processor-graphics-gen11-r1new.pdf)]
 
 ## Features

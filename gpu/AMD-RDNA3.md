@@ -14,6 +14,9 @@
 * RX 7600, RX 7600 XT
 * RX 7600S, RX 7600M, RX 7600M XT, RX 7700S
 
+**Custom**
+* Steam Machine (28CU)
+
 **Integrated (N4P)**:
 * 740M, 760M, 780M
 * Z1 (740M), Z1 Extreme (780M), Z2 (780M)
@@ -40,12 +43,12 @@
 9. [Microbenchmarking AMD’s RDNA 3 Graphics Architecture](https://chipsandcheese.com/2023/01/07/microbenchmarking-amds-rdna-3-graphics-architecture/)
 10. [AMD RDNA3 mesh shading with RADV](https://timur.hu/blog/2024/rdna3-mesh-shading)
 11. [AMD Reveals Radeon RX 7900 XTX and 7900 XT](https://www.anandtech.com/show/17638/amd-reveals-radeon-rx-7900-xtx-and-7900-xt-first-rdna-3-parts-to-hit-shelves-in-december)
-12. [Vulkan features for RX 7900 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%207900%20XT), [Radeon 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20780M%20Graphics)
+12. [Vulkan features for RX 7900 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20RX%207900%20XT), [Radeon 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD%20Radeon%20780M%20Graphics), [RADV 780M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+780M+Graphics+%28RADV+PHOENIX%29&platform=linux)
 13. [How to accelerate AI applications on RDNA 3 using WMMA](https://gpuopen.com/learn/wmma_on_rdna3/)
 
 
 **RDNA 3.5**
-2.1. [Vulkan features for Radeon 890M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon%28TM%29+890M+Graphics), [8060S](https://vulkan.gpuinfo.org/listreports.php?property=devicename&value=AMD%20Radeon(TM)%208060S%20Graphics&platform=all)<br/>
+2.1. [Vulkan features for Radeon 890M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon%28TM%29+890M+Graphics), [8060S](https://vulkan.gpuinfo.org/listreports.php?property=devicename&value=AMD%20Radeon(TM)%208060S%20Graphics&platform=all), [RADV 890M](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+890M+Graphics+%28RADV+GFX1150%29&platform=linux)<br/>
 2.2. ["RDNA3.5" Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/rdna35_instruction_set_architecture.pdf), [[backup](../pdf/AMD-rdna3_5_isa.pdf)<br/>
 2.3. [AMD RDNA 3.5’s LLVM Changes](https://chipsandcheese.com/2024/02/04/amd-rdna-3-5s-llvm-changes/)<br/>
 2.4. [AMD’s Radeon 890M: Strix Point’s Bigger iGPU](https://chipsandcheese.com/2024/08/24/amds-radeon-890m-strix-points-bigger-igpu/)
@@ -83,7 +86,7 @@
 * MIX instructions: [3]
 	- allow to combine fp32 and fp16, fp16_lo and fp16_hi.
 	- V_FMA_MIX_F32, V_FMA_MIXLO_F16, V_FMA_MIXHI_F16.
-	
+
 * Ray tracing instructions: [3]
 	- Box BVH nodes perform 4x Ray/Box intersection, sorts the 4 children based on intersection distance and returns the child pointers and hit status.
 	- Triangle nodes perform 1 Ray/Triangle intersection test and returns the intersection point and triangle ID.
@@ -92,6 +95,7 @@
 	- Shader programs can leverage its dual issue capability by using wave64 mode or special dual issue instructions in wave32 mode.
 	- On RDNA hardware, pixel shaders often use wave64 mode, in which 2048-bit vectors execute on the WGP’s 1024-bit execution units over 2 clock cycles, but achieve 1 instruction per cycle throughput on operations with dual issue support.
 	- Wave32 mode lets individual threads (waves) finish faster as 1 instruction per cycle throughput becomes the general case. However, taking advantage of RDNA 3’s extra FP32 units in wave32 mode requires the compiler to find dual issue pairs. That requires instruction-level parallelism within a basic block, and could be upended by register cache source port or result bus limitations.
+	- The dual issue shader array allows the scheduler to issue two wavefronts per cycle to different execution units within the WGP, improving utilization of the ALU resources.
 
 * A WGP with four SIMDs can thus track up to 64 independent instruction streams. [6]
 

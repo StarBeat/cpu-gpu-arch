@@ -11,7 +11,7 @@
 2. [Instruction Set Architecture](https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/instruction-set-architectures/rdna4-instruction-set-architecture.pdf)
 3. [AMD RDNA 4 architecture deep dive](https://www.notebookcheck.net/AMD-RDNA-4-architecture-deep-dive-A-64-CU-monolithic-design-with-all-round-improvements-to-compute-media-encode-decode-ray-tracing-and-AI.969593.0.html)
 5. [RDNA 4's "Out-of-Order" Memory Accesses](https://chipsandcheese.com/p/rdna-4s-out-of-order-memory-accesses)
-6. [Vulkan features for RX 9070 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+RX+9070+XT)
+6. [Vulkan features for RX 9070 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+RX+9070+XT), [RADV RX 9070 XT](https://vulkan.gpuinfo.org/listreports.php?devicename=AMD+Radeon+RX+9070+XT+%28RADV+GFX1201%29&platform=linux)
 7. [RDNA 4’s Raytracing Improvements](https://chipsandcheese.com/p/rdna-4s-raytracing-improvements)
 8. [Dynamic Register Allocation on AMD's RDNA 4 GPU Architecture](https://chipsandcheese.com/p/dynamic-register-allocation-on-amds)
 9. [Using the Matrix Cores of AMD RDNA 4 architecture GPUs](https://gpuopen.com/learn/matrix_core_amd_rdna4/)

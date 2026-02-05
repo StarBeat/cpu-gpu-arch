@@ -3,6 +3,7 @@ Content:
 * [ARMv8.2-A](#ARMv82-A)
 * [ARMv9.0-A](#ARMv90-A)
 * [ARMv9.2-A](#ARMv92-A)
+* [ARMv9.3-A](#ARMv93-A)
 
 
 # ARMv8-A
@@ -75,14 +76,15 @@ Content:
 2.1. [Exploring DynamIQ and ARM’s New CPUs: Cortex-A75, Cortex-A55](https://www.anandtech.com/show/11441/dynamiq-and-arms-new-cpus-cortex-a75-a55)<br/>
 2.2. [Arm's New Cortex-A77 CPU Micro-architecture](https://www.anandtech.com/show/14384/arm-announces-cortexa77-cpu-ip)<br/>
 2.3. [Arm's New Cortex-A78 and Cortex-X1 Microarchitectures](https://www.anandtech.com/show/15813/arm-cortex-a78-cortex-x1-cpu-ip-diverging)<br/>
-2.4. [Arm Cortex-A78 Core Software Optimization Guide](https://developer.arm.com/documentation/102160/latest/), [[backup](../pdf/Arm-Cortex-A78_Core_Software_Optimization_Guide.pdf)]<br/>
-2.5. [Arm Cortex-X1 Core Software Optimization Guide](https://documentation-service.arm.com/static/5f15a74720b7cf4bc5247c06), [[backup](../pdf/Arm-Cortex-X1_Core_Software_Optimization_Guide.pdf)]<br/>
 2.6. [Deep Diving Neoverse N1](https://chipsandcheese.com/2021/10/22/deep-diving-neoverse-n1/)<br/>
 2.7. [Arm Cortex-X1: The First From The Cortex-X Custom Program](https://fuse.wikichip.org/news/3543/arm-cortex-x1-the-first-from-the-cortex-x-custom-program/)<br/>
 2.8. [Arm Unveils the Cortex-A78: When Less Is More](https://fuse.wikichip.org/news/3536/arm-unveils-the-cortex-a78-when-less-is-more/)<br/>
 2.9. [Arm Unveils Cortex-A77, Emphasizes Single-Thread Performance](https://fuse.wikichip.org/news/2339/arm-unveils-cortex-a77-emphasizes-single-thread-performance/)<br/>
-2.10. [Arm Cortex-A55 Software Optimization Guide](TODO), [[backup](../pdf/arm-cortex_a55_software_optimization_guide_v3.pdf)]<br/>
-2.11. [Arm Cortex-A76 Software Optimization Guide](TODO), [[backup](../pdf/arm-cortex_a76_software_optimization_guide.pdf)]<br/>
+2.4. Software Optimization Guide:
+	* [Cortex-A55](https://developer.arm.com/documentation/EPM128372/latest/), [[backup](../pdf/arm-cortex_a55_software_optimization_guide_v3.pdf)]
+	* [Cortex-A76](https://developer.arm.com/documentation/pjdoc466751330-7215/latest/), [[backup](../pdf/arm-cortex_a76_software_optimization_guide.pdf)]
+	* [Cortex-A78](https://developer.arm.com/documentation/102160/latest/), [[backup](../pdf/Arm-Cortex-A78_Core_Software_Optimization_Guide.pdf)]
+	* [Cortex-X1](https://documentation-service.arm.com/static/5f15a74720b7cf4bc5247c06), [[backup](../pdf/Arm-Cortex-X1_Core_Software_Optimization_Guide.pdf)]
 
 ## Notes
 
@@ -156,17 +158,23 @@ Content:
 3.12. [Arm Unveils Next-Gen Armv9 Little Core: Cortex-A510](https://fuse.wikichip.org/news/5268/arm-unveils-next-gen-armv9-little-core-cortex-a510/)<br/>
 3.13. [Arm Launches Its New Flagship Performance Armv9 Core: Cortex-X2](https://fuse.wikichip.org/news/5269/arm-launches-its-new-flagship-performance-armv9-core-cortex-x2/)<br/>
 3.14. [Arm Unveils Next-Gen Armv9 Big Core: Cortex-A710](https://fuse.wikichip.org/news/5267/arm-unveils-next-gen-armv9-big-core-cortex-a710/)<br/>
+3.15. Software Optimization Guide:
+	* [Cortex‑A510](https://developer.arm.com/documentation/PJ02607EXP-1901056752-266/latest/)
+	* [Cortex-A710](https://developer.arm.com/documentation/PJDOC-466751330-14951/latest/)
+	* [Cortex-A715](https://developer.arm.com/documentation/PJDOC-466751330-556347/latest/)
+	* [Cortex-X2](https://developer.arm.com/documentation/PJDOC-466751330-14955/latest/)
+	* [Cortex-X3](https://developer.arm.com/documentation/pjdoc466751330-590747/latest/)
 
 ## Notes
 
 * X3:
 	- 11 cycle mispredict penalty
 	- reorder buffer: 320x2
-	
+
 * A715:
 	- 12 cycle mispredict penalty
 	- 10 cycle latency to access L2
-	
+
 * A510: [llm]
 	- 3x ALU pipelines [4.11]
 	- fp32 FLOPS/cy: 8 (1 × 128-bit FMA, SVE2/NEON)
@@ -216,8 +224,6 @@ Content:
 
 ## References
 
-4.2. [Arm Cortex-A520 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC-1505342170-671342/latest)<br/>
-4.3. [Arm Cortex-X4 Core Software Optimization Guide](https://developer.arm.com/documentation/PJDOC1505342170538636/latest/)<br/>
 4.4. [Arm Cortex-X4 Core Technical Reference Manual](https://developer.arm.com/documentation/102484/0002/The-Cortex-X4--core)<br/>
 4.5. [Arm Unveils 2024 CPU Core Designs, Cortex X925, A725 and A520](https://www.anandtech.com/show/21399/arm-unveils-2024-cpu-core-designs-cortex-x925-a725-and-a520-arm-v9-2-redefined-for-3nm-)<br/>
 4.6. [Arm Launches Next-Gen Big-Core: Cortex-A725](https://fuse.wikichip.org/news/7829/arm-launches-next-gen-big-core-cortex-a725/)<br/>
@@ -225,7 +231,13 @@ Content:
 4.8. [Arm Introduces A New Big Core, The Cortex-A720](https://fuse.wikichip.org/news/7529/arm-introduces-a-new-big-core-the-cortex-a720/)<br/>
 4.9. [Arm Introduces The Cortex-X4, Its Newest Flagship Performance Core](https://fuse.wikichip.org/news/7531/arm-introduces-the-cortex-x4-its-newest-flagship-performance-core/)<br/>
 4.10. [Arm Launches Next-Gen Efficiency Core; Cortex-A520](https://fuse.wikichip.org/news/7527/arm-launches-next-gen-efficiency-core-cortex-a520/)<br/>
-4.11. [Arm's Total Compute Solution For 2023](https://hothardware.com/reviews/arm-tcs-2023-cortex-x4-immortalis-g720)
+4.11. [Arm's Total Compute Solution For 2023](https://hothardware.com/reviews/arm-tcs-2023-cortex-x4-immortalis-g720)<br/>
+4.12. Software Optimization Guide:
+	* [Cortex-A520](https://developer.arm.com/documentation/PJDOC-1505342170-671342/latest)
+	* [Cortex-A720](https://developer.arm.com/documentation/109720/latest/)
+	* [Cortex-A725](https://developer.arm.com/documentation/109824/latest/)
+	* [Cortex-X4](https://developer.arm.com/documentation/PJDOC1505342170538636/latest/)
+	* [Cortex-X925](https://developer.arm.com/documentation/109842/latest/)
 
 ## Notes
 
@@ -308,6 +320,14 @@ Content:
 * C1-Ultra, C1-Premium, C1-Nano
 
 ## References
+
+5.1. Software Optimization Guide:
+	* [C1-Ultra](https://developer.arm.com/documentation/111079/3-0)
+	* [C1-Premium](https://developer.arm.com/documentation/111080/3-0)
+	* [C1-Pro](https://developer.arm.com/documentation/109879), [[backup](../pdf/arm-c1_pro_core_software_optimization_guide_109879_0102_05_en.pdf)]
+	* [C1-Nano](https://developer.arm.com/documentation/109590/0001)
+5.2. Technical Reference Manual:
+	* [C1-Ultra](https://developer.arm.com/documentation/108014/latest/), [[backup](../pdf/arm-c1_ultra_core_technical_reference_manual_108014_0100_04_en.pdf)]
 
 ## Notes
 

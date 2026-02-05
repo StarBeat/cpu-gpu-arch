@@ -138,8 +138,8 @@ Content:
 
 * [500](Adreno-500.md)
 * [600](Adreno-600.md)
-* [700, X](Adreno-700.md)
-* [800](Adreno-800.md)
+* [700, X1](Adreno-700.md)
+* [800, X2](Adreno-800.md)
 
 ### Specs & Guide
 

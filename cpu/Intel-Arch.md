@@ -253,7 +253,7 @@
 	  | L1 | 4'513 | 2'280 | 4'572 | 1.0  | 5  |
 	  | L2 | 1'554 | 666   | 1'058 | 2.7  | 13 |
 	  | L3 | 312   | 205   | 243   | 12.0 | 59 |
-	
+
 </details>
 
 
@@ -337,9 +337,9 @@
 	- cores: 4
 	- | cache | read | write | copy | latency | cycles |
 	  |---|---|---|---|---|---|
-	  | L1 | 335 | 300 | 607 | 0.9  |  |
-	  | L2 | 150 | 41  | 73  | 5.9  |  |
-	  | L3 | 56  | 25  | 41  | 14.9 |  |
+	  | L1 | 335 | 300 | 607 | 0.9  | 3 |
+	  | L2 | 150 | 41  | 73  | 5.9  | 20 |
+	  | L3 | 56  | 25  | 41  | 14.9 | 51 |
 
 </details>
 
@@ -635,7 +635,7 @@ Core Ultra Series 2.
 	- L1.5 Data: 192 KB per core, *64 B/cy ?*, 9cy
 	- L2: 3 MB per core, *32 B/cy ?*, 17cy
 	- L3: shared with E-cores, ~84cy
-	
+
 * L1.5 basically replaces the L2 as the primary data source for L1D misses. [4]
 
 ### Skymont E-core
@@ -647,14 +647,15 @@ Core Ultra Series 2.
 	- 416 entry reorder buffer [6]
 	- in tests achieve 90% of theoretical fp32 FMA performance [5]
 	- adds fast path hardware to handle subnormal floating point numbers. [7]
-	
+
 * Cache: [4, 5, 6]
 	- L1 Instruction: 64 KB per core, read 3x 32B/cy [7]
 	- L1 Data: 32 KB per core, read 3x 16B/cy, write 32 B/cy, 4cy [7]
 	- L2: 4 MB per cluster (4 cores), read 64 B/cy per core, 128 B/cy total, 17cy [7]
 	- L3 to L2: 32 B/cy [7]
 	- L3: shared with P-cores
-	
+
+
 ### Skymont LP E-core
 
 * performance:
@@ -688,9 +689,9 @@ Core Ultra Series 2.
 	- | cache | read | write | copy | latency | cycles |
 	  |---|---|---|---|---|---|
 	  | L1   | 4'920 | 3'580 | 6'800 | 0.8  | 4 |
-	  | L1.5 | 1'190 | 572   | 873   | 1.8  |  |
-	  | L2   | 549   | 588   | 750   | 4.3  |  |
-	  | L3   | 700   | 640   | 700   | 20.9 |  |
+	  | L1.5 | 1'190 | 572   | 873   | 1.8  | 9 |
+	  | L2   | 549   | 588   | 750   | 4.3  | 22 |
+	  | L3   | 700   | 640   | 700   | 20.9 | 108 |
 
 </details>
 
@@ -718,7 +719,7 @@ Core Ultra 200V Series.
 ### Lion Cove P-core
 
 * Same as Arrow Lake
-	
+
 ### Skymont E-core
 
 * Same as Arrow Lake
@@ -734,39 +735,10 @@ Core Ultra 200V Series.
 	- | cache | read | write | copy | latency | cycles |
 	  |---|---|---|---|---|---|
 	  | L1 | 1'865 | 1'350 | 2'680 | 0.8  | 4 |
-	  | L2 | 396   | 281   | 340   | 4.3  |  |
-	  | L3 | 470   | 250   | 380   | 10.9 |  |
+	  | L2 | 396   | 281   | 340   | 4.3  | 20 |
+	  | L3 | 470   | 250   | 380   | 10.9 | 50 |
 
 </details>
-
-
-# Sapphire Rapids (2023)
-Server CPU.<br/>
-**Golden Cove** microarchitecture.
-
-## Examples
-
-* Xeon Max 9480
-* Xeon Platinum 8400
-* Xeon Gold 5400, 6400
-* Xeon Silver 4400
-
-## Notes
-
-* AVX512 extensions: F, CD, VL, DQ, BW, IFMA, VBMI, VBMI2, BITALG, VNNI, GFNI, VPOPCNTDQ, VPCLMULQDQ, VAES, BF16, FP16
-
-
-# Granite Rapids (2024)
-Server CPU.<br/>
-
-## Notes
-
-* AVX10.1 instructions.
-
-
-# Future
-
-* [Intel Unveils AVX10 and APX Instruction Sets: Unifying AVX-512 For Hybrid Architectures](https://www.anandtech.com/show/18975/intel-unveils-avx10-and-apx-isas-unifying-avx512-for-hybrid-architectures-)
 
 
 # Panther Lake (2025)
@@ -806,4 +778,9 @@ Core Ultra Series 3
 * In middle configuration of Panther Lake the Compute Tile now has 4 P-Cores and 8 E-Cores which share a 18MB L3 cache with an extra 4 LP E-Cores, all of which can access the 8MB memory-side cache on board the Compute tile. [2]
 
 * Intel had increased the TLB capacity by 50% compared to Lion Cove along with improving the branch predictor by increasing some of the structure sizes in the BPU along with porting over some of the novel BPU algorithms that Intel tested in Lunar Lake. [3.1]
+
+
+# Future
+
+* [Intel Unveils AVX10 and APX Instruction Sets: Unifying AVX-512 For Hybrid Architectures](https://www.anandtech.com/show/18975/intel-unveils-avx10-and-apx-isas-unifying-avx512-for-hybrid-architectures-)
 

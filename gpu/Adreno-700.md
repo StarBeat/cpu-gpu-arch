@@ -24,6 +24,11 @@
 
 * Hardware ray tracing. [6]
 * Sparse memory. [6]
+* fragment interlock. [6]
+* mesh shader. [6]
+* image atomic int64. [6]
+* cooperative matrix. [6]
+* fragment shader barycentric. [6]
 
 ## Notes
 
@@ -42,6 +47,16 @@
 * XR2 Gen2:
 	- GPU Heavy: 600MHz GPU, 1.6GHz CPU
 	- CPU heavy: 490MHz GPU, 2.0GHz CPU
-	- Adreno 740 with 1536 threads, 3.1 TFLOPS
+	- Adreno 740:
+		* 256 SIMD, 1536 threads
+		* 3.1 TFLOPS
+		* GMem: 3 MB
 	- 4x Cortex A78C 2.36GHz, 2x Cortex A78C 2.05GHz
-	- LPDDR5X quad-channel (64bit)
+	- LPDDR5X quad-channel, 64bit, 76.8 GB/s
+
+* X1:
+	- X1-45 TFLOPS: 1.7 - 2.1
+	- X1-45 MegaTris/s: 1.1
+	- X1-85 TFLOPS: 3.8 - 4.6
+	- X1-85 MegaTris/s: 2.5
+	- RAM: LPDDR5X-8448, 128-bit, 135 GB/s

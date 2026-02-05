@@ -30,24 +30,24 @@
 	- As the AoP DMP operates only on a stream of memory accesses, and does not have any concept of array bounds, this prefetcher can overshoot the legal set of pointers to access and attempt a prefetch of unrelated memory addresses up to its prefetch depth.
 
 * Firestorm (A14 / M1): [llm]
-	- fp32 FLOPS/clk: 32 (4 × 128-bit FMA)
-	- i32 ops/clk:    16
+	- fp32 FLOPS/cy:  32 (4 × 128-bit FMA)
+	- i32 ops/cy:     16
 	- L1 latency:      3 cy
-	- L1 bandwidth:   96 B/clk (3×128-bit loads + 3×128 stores)
+	- L1 bandwidth:   96 B/cy (3×128-bit loads + 3×128 stores)
 	- L2 latency:      8 cy
-	- L2 bandwidth:   96 B/clk
+	- L2 bandwidth:   96 B/cy
 	- Vector formats: fp32, fp16, bf16, int8/16/32, dotprod
 	- Extra: AMX (matrix) 8 k × 8 k B tiles, fp16/bf16/int8
-	
+
 * Icestorm (A14/M1): [llm]
-	- fp32 FLOPS/clk: 8 (1 × 128-bit FMA)
-	- i32 ops/clk:    4
+	- fp32 FLOPS/cy:  8 (1 × 128-bit FMA)
+	- i32 ops/cy:     4
 	- L1 latency:     3 cy
-	- L1 bandwidth:  32 B/clk
+	- L1 bandwidth:  32 B/cy
 	- L2 latency:     9 cy (shared 4 MB with all E-cores)
-	- L2 bandwidth:  32 B/clk
+	- L2 bandwidth:  32 B/cy
 	- Vector formats: fp32, fp16, int8/16/32, dotprod
-	
+
 * NPU with 11 TOPS on i8 (?)
 
 
@@ -58,22 +58,22 @@
 * Instruction set: ARMv8.6-A
 
 * Avalanche (A15 / M2): [llm]
-	- fp32 FLOPS/clk: 32
-	- i32 ops/clk:    16
+	- fp32 FLOPS/cy:  32
+	- i32 ops/cy:     16
 	- L1 latency:      3 cy
-	- L1 bandwidth:   128 B/clk (4×128-bit ld + 4×128 st)
+	- L1 bandwidth:   128 B/cy (4×128-bit ld + 4×128 st)
 	- L2 latency:     7-8 cy
-	- L2 bandwidth:   128 B/clk
+	- L2 bandwidth:   128 B/cy
 	- Vector formats: fp32, fp16, bf16, int8/16/32, dotprod
 	- Extra: AMX v2, adds fp32 accumulation
-	
+
 * Blizzard (A15/M2): [llm]
-	- fp32 FLOPS/clk: 8
-	- i32 ops/clk:    4
+	- fp32 FLOPS/cy:  8
+	- i32 ops/cy:     4
 	- L1 latency:     3 cy
-	- L1 bandwidth:  32 B/clk
+	- L1 bandwidth:  32 B/cy
 	- L2 latency:     8 cy
-	- L2 bandwidth:  32 B/clk
+	- L2 bandwidth:  32 B/cy
 	- Vector formats: fp32, fp16, bf16, int8/16/32, dotprod
 
 
@@ -88,22 +88,22 @@
 * Instruction set: ARMv8.7-A
 
 * Everest (A16 / A17 Pro / M3): [llm]
-	- fp32 FLOPS/clk: 48 (6 × 128-bit FMA)
-	- i32 ops/clk:    24
+	- fp32 FLOPS/cy:  48 (6 × 128-bit FMA)
+	- i32 ops/cy:     24
 	- L1 latency:      3 cy
-	- L1 bandwidth:   128 B/clk
+	- L1 bandwidth:   128 B/cy
 	- L2 latency:     6-7 cy
-	- L2 bandwidth:   128 B/clk
+	- L2 bandwidth:   128 B/cy
 	- Vector formats: fp32, fp16, bf16, int8/16/32, dotprod
 	- Extra: AMX v3 with fp8 & int4 support
 
 * Sawtooth (A16/A17/M3): [llm]
-	- fp32 FLOPS/clk : 8
-	- i32 ops/clk:     4
+	- fp32 FLOPS/cy:   8
+	- i32 ops/cy:      4
 	- L1 latency:      3 cy
-	- L1 bandwidth:   32 B/clk
+	- L1 bandwidth:   32 B/cy
 	- L2 latency:      7 cy
-	- L2 bandwidth:   32 B/clk
+	- L2 bandwidth:   32 B/cy
 	- Vector formats: fp32, fp16, bf16, int8/16/32, dotprod, fp8 (via AMX)
 
 

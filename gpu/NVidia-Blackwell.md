@@ -12,6 +12,8 @@ Codename: GB100 (datacenter), GB20x (consumer)
 2. [A Deeper Analysis of Nvidia RTX 50 Blackwell GPU Architecture](https://www.guru3d.com/review/technical-analysis-of-nvidia-rtx-50-blackwell-gpu-architecture/)
 3. [NVIDIA RTX BLACKWELL GPU ARCHITECTURE (5090)](https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf)
 4. [Blackwell: Nvidia’s Massive GPU](https://chipsandcheese.com/p/blackwell-nvidias-massive-gpu)
+5. [Vulkan features for GTX 5080](https://vulkan.gpuinfo.org/listreports.php?devicename=NVIDIA%20GeForce%20RTX%205080)
+6. [RTX 5070Ti Benchmarks](https://github.com/azhirnov/as-en/blob/dev/AE/docs/papers/bench-gpu/NVidia_RTX5070Ti.md)
 
 ## Features
 
